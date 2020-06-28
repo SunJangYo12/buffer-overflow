@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="Proteksi%20Terhadap%20Buffer%20Overflow_files/css.css" rel="stylesheet" type="text/css">
+<link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud?source=profiles">
+<link rel="openid2.local_id" href="https://www.google.com/profiles/yohanes">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Proteksi Terhadap Buffer Overflow</title>
+<link rel="icon" href="https://yohan.es/favicon.ico" type="image/x-icon">
+<link href="Proteksi%20Terhadap%20Buffer%20Overflow_files/style.css" rel="stylesheet">
+<link href="Proteksi%20Terhadap%20Buffer%20Overflow_files/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+<link href="Proteksi%20Terhadap%20Buffer%20Overflow_files/bootstrap-responsive.css" rel="stylesheet">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<meta name="google-site-verification" content="nfHXplO1gBCV_4iGIfDjeOZ1vtNvV3JknSYms0ZdiHI">
+<script src="Proteksi%20Terhadap%20Buffer%20Overflow_files/sdk_002.js" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="Proteksi%20Terhadap%20Buffer%20Overflow_files/sdk.js"></script><script type="text/javascript" async="" src="Proteksi%20Terhadap%20Buffer%20Overflow_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28573496-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script async="" src="Proteksi%20Terhadap%20Buffer%20Overflow_files/lazysizes.html" type="text/javascript"></script>
+<link rel="preload" as="script" href="https://yohan.es/bootstrap/js/bootstrap.min.js"><link rel="preload" as="script" href="https://yohan.es/bootstrap/js/jquery-1.8.0.min.js"><link rel="preload" as="script" href="Proteksi%20Terhadap%20Buffer%20Overflow_files/brand"><link rel="preload" as="script" href="Proteksi%20Terhadap%20Buffer%20Overflow_files/lazysizes.html"></head>
+<body>
+<div id="fb-root"></div>
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=151853914827909";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://yohan.es/">Yohan.es</a>
+<div class="nav-collapse collapse">
+<ul class="nav">
+<li><a href="https://yohan.es/applications/">My Apps</a></li>
+<li><a href="https://yohan.es/blackberry/">BlackBerry</a></li>
+<li><a href="https://yohan.es/android/">Android</a></li>
+<li><a href="https://yohan.es/playbook/">PlayBook</a></li>
+<li><a href="https://yohan.es/gadget/">Gadgets</a></li>
+</ul>
+<form action="https://yohan.es/search/" id="cse-search-box" class="navbar-form pull-right">
+<div>
+<input type="hidden" name="cx" value="partner-pub-2563024894235569:kg15mqcozdt">
+<input type="hidden" name="cof" value="FORID:10">
+<input type="hidden" name="ie" value="ISO-8859-1">
+<input type="text" name="q" size="31">
+<input type="submit" name="sa" value="Search" class="btn">
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<div id="content">
+<script type="text/javascript" src="Proteksi%20Terhadap%20Buffer%20Overflow_files/brand"></script><!--<script type="text/javascript" src="//www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>-->
+
+<div id="page" style="padding-top: 0px;">
+<h1><a name="index1h1"></a>Proteksi Terhadap Buffer Overflow</h1>
+<p>Buffer overflow merupakan anomali dalam program. Ada dua pendekatan 
+mencegahnya: membuat supaya program tidak memiliki buffer overflow dan 
+merancang sistem, agar jika ada buffer overflow maka tidak ada efek 
+buruknya.</p>
+<p>Berikut ini urutan pembahasan yang akan saya lakukan:</p>
+<div class="toc">
+<ol>
+<li class="L2"><a href="#index1h2">Mencegah terjadinya overflow</a>
+</li>
+<li class="L2"><a href="#index2h2">Membuat buffer overflow tidak efektif</a>
+<ol>
+<li class="L3"><a href="#index1h3">Nonexecutable data (executable space protection)</a>
+</li>
+<li class="L3"><a href="#index2h3">Canary</a>
+</li>
+<li class="L3"><a href="#index3h3">Address Space Layout Randomization (ASLR)</a>
+</li>
+<li class="L3"><a href="#index4h3">Pointer protection</a>
+</li>
+</ol>
+</li>
+<li class="L2"><a href="#index3h2">Penutup</a>
+</li>
+</ol>
+</div>
+<h2><a name="index1h2"></a>Mencegah terjadinya overflow</h2>
+<p>Ada beberapa cara mencegah buffer overflow, berikut ini ringkasan beberapa pendekatan tersebut:</p>
+<ul>
+<li>Menulis ulang program dalam bahasa lain. Kadang ini tidak mungkin dilakukan, terutama jika programnya low level.</li>
+<li>Memakai library khusus untuk mencegah kesalahan umum (library semacam ini tidak selalu tersedia)</li>
+<li>Melakukan <em>code review</em> (tapi kadang ada bug yang terlewat)</li>
+<li>Memakai tools yang dapat melakukan pemeriksaan statik (kadang bug ditemukan, kadang tidak)</li>
+</ul>
+<p>Untuk aplikasi jaringan, ada pendekatan lain: paket jaringan yang masuk bisa diperiksa, dan jika mengandung <code>shellcode</code>
+ yang dikenal, atau mengandung banyak NOP, maka paket akan dicegah 
+masuk. Tapi cara ini sangat tidak efektif, karena ada kemungkinan 
+mencegah paket valid, dan ada banyak variasi <code>shellcode</code> yang tidak dikenal.</p>
+<p>Beberapa masalah dengan pendekatan pencegahan adalah:</p>
+<ul>
+<li>Membutuhkan waktu jika harus dilakukan pada semua program (entah itu
+ mengubah program agar memakai library lain, melakukan code review, dsb)</li>
+<li>Tidak 100% efektif dan tidak selalu bisa dilakukan (misalnya untuk 
+OS tertentu, tidak ada tools yang bisa memeriksa kode dengan baik)</li>
+</ul>
+<p>Karena pendekatan pencegahan tidak selalu bisa dilakukan, maka 
+pendekatan kedua tetap diperlukan: bagaimana membuat buffer overflow 
+tidak efektif lagi andaikan ada bug buffer overflow di program.</p>
+<h2><a name="index2h2"></a>Membuat buffer overflow tidak efektif</h2>
+<p>Langkah pengaman berikutnya adalah: jika ternyata terjadi buffer 
+overflow, bagaimana caranya agar efeknya tidak merusak. Tidak apa-apa 
+jika program crash, karena programnya memang salah, tapi jangan sampai 
+mempengaruhi security.</p>
+<h3><a name="index1h3"></a>Nonexecutable data (executable space protection)</h3>
+<p>Hal pertama yang bisa dilakukan untuk mencegah buffer overflow 
+adalah: mencegah agar bagian data tidak bisa dieksekusi. Ini membutuhkan
+ support hardware (NX bit di x86 atau XN bit di ARM). Biasanya data dan 
+program dianggap sama, jadi kita bisa menginjeksikan <em>shellcode</em>. Jika shellcode tidak bisa dieksekusi, maka eksploitasi akan gagal. Bagaimana proteksi ini bekerja? Ketika instruksi <code>ret</code>
+ dieksekusi, maka eksekusi akan dilanjutkan di stack. Karena stack 
+adalah data, dan data tidak boleh dieksekusi, maka akan terjadi <code>segmentation fault</code>.</p>
+<p>Proteksi ini tidak menambah overhead, karena dilakukan di level 
+hardware. Kelemahannya utamanya adalah: untuk saat ini tidak semua 
+hardware punya fitur ini. Jadi meski proteksi ini cukup bagus, proteksi 
+ini tidak selalu dipakai.</p>
+<p>Karena bagian data tidak bisa dieksekusi, maka tidak mungkin lagi 
+menginjeksi kode ke program. Proteksi ini ternyata bisa diatasi dengan 
+menggunakan teknik yang bernama <em>return-to-libc</em> (akan dijelaskan
+ lebih lanjut di artikel lain). Kita tidak menambahkan/menginjeksikan 
+kode baru ke program, tapi menggunakan kode yang sudah ada (atau fungsi 
+yang ada di library, misalnya yang ada di library C yang dipakai semua 
+program C). Ini dimungkinkan karena alamat fungsi selalu sama ketika 
+program dijalankan (tapi lihat topik Address Space Layout 
+Randomization/ASLR di tulisan ini).</p>
+<p>Dengan teknik ini, kita mengisi stack dengan nilai yang akan menjadi parameter sebuah fungsi, lalu mengeset <em>return address</em>
+ ke suatu fungsi yang kita tahu ada di memori. Dalam kasus ini, kode 
+yang dieksekusi adalah kode yang sudah ada di executable section, hanya 
+saja kita memberikan parameter sesuai yang kita inginkan. Pertama kali 
+teknik ini diumumkan, fungsi yang dipilih adalah fungsi <code>system</code> yang ada di library C, oleh karena itu teknik ini disebut dengan <code>return-to-libc</code>.</p>
+<p>Teknik itu kemudian dikembangkan lebih lanjut, supaya dapat 
+mengeksekusi lebih dari satu fungsi. Dan akhirnya dikembangkan secara 
+penuh menjadi <em>return-oriented-programming</em>. Teknik ini cukup 
+kompleks: mengumpulkan potongan kode yang sudah ada di dalam program 
+(atau library) dan disusun supaya bisa melakukan apapun juga. Detailnya 
+cukup kompleks, Anda bisa membacanya sendiri di <a href="https://cseweb.ucsd.edu/~hovav/talks/blackhat08.html">http://cseweb.ucsd.edu/~hovav/talks/blackhat08.html</a>.</p>
+<h3><a name="index2h3"></a>Canary</h3>
+<p>Canary (burung Kenari) dipakai oleh penambang untuk mengindikasikan 
+gas berbahaya. Jika ada gas berbahaya, burung kenari akan mati lebih 
+dulu, jadi penambang bisa tahu dan segera keluar dari tambang. Apa 
+hubungannya kenari dengan buffer overflow? Kalau Anda lihat di 
+pembahasan stack buffer overflow, Anda akan melihat bahwa untuk menimpa <em>return address</em>
+ EBP harus ditimpa dulu. Nah jika sebelum EBP kita letakkan sebuah 
+nilai, maka nilai tersebut juga pasti ditimpa jika terjadi buffer 
+overflow. Nilai inilah yang disebut sebagai kenari (kadang disebut juga <code>guard</code>)</p>
+
+<p><img src="Proteksi%20Terhadap%20Buffer%20Overflow_files/ditaa-proteksi-1.png" alt="ditaa-proteksi-1.png"></p>
+<p>Nah jika kita ganti instruksi terakhir sebelum <code>ret</code> 
+dengan instruksi untuk mengecek apakah nilai kenari masih sama dengan 
+nilai awal atau tidak, maka kita bisa mengecek apakah terjadi buffer 
+overflow atau tidak. Jika iya, maka program bisa langsung berhenti. 
+Berikut ini contoh implementasinya untuk program kosong di C (hanya <code>return 0</code> saja, OS OpenBSD):</p>
+<pre><code>         .file   "test.c"
+         .globl  __stack_smash_handler
+         .section        .rodata
+ .LC0:
+         .string "main"
+         .text
+         .globl  main
+         .type   main, @function
+ main:
+         pushl   %ebp
+         movl    %esp, %ebp
+         subl    $24, %esp
+         andl    $-16, %esp
+         movl    $0, %eax
+         subl    %eax, %esp
+         movl    __guard, %eax
+         movl    %eax, -24(%ebp)
+         movl    $0, %eax
+         movl    -24(%ebp), %edx
+         cmpl    __guard, %edx
+         je      .L2
+         subl    $8, %esp
+         pushl   -24(%ebp)
+         pushl   $.LC0
+         call    __stack_smash_handler
+         addl    $16, %esp
+ .L2:
+         leave
+         ret
+         .size   main, .-main
+</code></pre>
+<p>Instruksi utama program sebenarnya hanya ini:</p>
+<pre><code>     movl    $0, %eax
+</code></pre>
+<p>Tapi perhatikan bahwa di awal ada instruksi yang menyimpan nilai <code>__guard</code> (ini akan diisi nilai acak setiap kali program dijalankan) dan disimpan di posisi <code>ebp-24</code></p>
+<pre><code>         movl    __guard, %eax
+         movl    %eax, -24(%ebp)
+</code></pre>
+<p>Dan di akhir, nilai ini dicek lagi, apakah masih sama atau tidak, jika tidak maka <code>__stack_smash_handler</code> akan dipangil.</p>
+<pre><code>         movl    -24(%ebp), %edx
+         cmpl    __guard, %edx
+         je      .L2
+         subl    $8, %esp
+         pushl   -24(%ebp)
+         pushl   $.LC0
+         call    __stack_smash_handler
+         addl    $16, %esp
+ .L2:
+         leave
+         ret
+         .size   main, .-main
+</code></pre>
+<p>Tentunya kelemahan utama pemakaian kenari adalah: ada overhead setiap kali fungsi dipanggil. Harus ada pemeriksaan.</p>
+<p>Ada beberapa jenis kenari:</p>
+<ul>
+<li>Nilai tetap (0x0000000). Ini akan mencegah overwrite oleh fungsi-fungsi string (<code>strcpy</code>, <code>strcat</code>, dsb) karena fungsi string pasti tidak bisa mengoverwrite <em>canary</em> dengan nilai 0 (akan berhenti). Dengan kata lain: jika ada overflow di fungsi string, maka <em>pasti</em> nilai <em>canary</em> menjadi bukan nol.</li>
+<li>Nilai NUL (0x00), karakter ganti baris CR (0x0d), LF (0x0a) dan 
+akhir file EOF (0xff). Nilai ini akan menghentikan fungsi manipulasi 
+string, dan juga menghentikan loop yang memproses sampai karakter akhir 
+baris atau akhir file.</li>
+<li>Nilai acak: nilai kenari dihasilkan acak ketika program berjalan</li>
+<li>Nilai acak di XOR-kan dengan alamat kembali</li>
+</ul>
+<p>Pendekatan pertama dan kedua bisa gagal jika fungsi yang error adalah fungsi selain manipulasi string (misalnya <code>fread</code>).
+ Semua pendekatan bisa gagal jika salah satu variabel lokal adalah 
+pointer ke fungsi, pointer itu dipakai untuk memanggil fungsi, dan kita 
+bisa menimpa pointer tersebut. Masih ada beberapa kelemahan implementasi
+ yang bisa dimanfaatkan (tergantung versi compiler dan library), tapi 
+tidak akan dibahas di sini.</p>
+<h3><a name="index3h3"></a>Address Space Layout Randomization (ASLR)</h3>
+<p>Jika kedua hal sebelumnya diimplementasikan, maka akan cukup sulit 
+mengeksploitasi program. Tapi meski dengan proteksi Canary, kadang kita 
+masih bisa menimpa <em>return address</em> (dan kadang canary tidak 
+diaktifkan karena memakan CPU terlalu banyak). Lalu kita akan kena 
+hambatam berikutnya: stack tidak bisa dieksekusi, tapi ini masih bisa 
+diatasi dengan <em>return-to-libc</em>. Ini mungkin karena alamat fungsi
+ selalu tetap. Dengan ASLR, alamat ini akan dirandomisasi oleh OS, 
+sehingga alamatnya tidak lagi tetap. Ini akan menyulitkan serangan <em>return-to-libc</em>.</p>
+<p>Di sistem Intel 64 bit, ASLR ini sangat efektif, tapi di sistem Intel
+ 32 bit kurang efektif, karena prosessor hanya bisa mengubah 16 bit saja
+ (65536 kemungkinan), dan ini bisa di <em>brute-force</em> dalam beberapa menit saja.</p>
+<h3><a name="index4h3"></a>Pointer protection</h3>
+<p>Dalam pendekatan ini: setiap pointer akan "dienkripsi". Nilai pointer
+ defaultnya dalam kondisi terenkirpsi, lalu akan didekripsi ketika akan 
+dipakai. Cara yang disarankan adalah dengan meng-XOR-kan pointer dengan 
+suatu nilai. Tadinya diusulkan agar teknik ini dimasukkan ke dalam 
+compiler, tapi cara ini sangat lambat, sehingga tidak dipakai secara 
+luas. Windows XP SP2 dan Windows memiliki API untuk mengenkripsi dan 
+mendekripsi pointer, tapi programmer harus menambahkan kode proteksi 
+secara manual.</p>
+<h2><a name="index3h2"></a>Penutup</h2>
+<p>Melewati satu proteksi <em>buffer overflow</em> relatif mudah 
+dilakukan. Melewati dua proteksi semakin sulit, dan melewati tiga 
+proteksi menjadi sangat sulit. Meskipun proteksi sudah sangat hebat, dan
+ akan melindungi sebagian besar program dari buffer overflow, beberapa 
+program masih bisa dieksploitasi, jika beberapa kondisi dipenuhi 
+(tergantung OS, Library, dsb). Programmer yang baik seharusnya tidak 
+menggantungkan diri pada proteksi dari OS, tapi berusaha agar membuat 
+program yang aman.</p>
+
+<div id="backlinks">
+Links:
+<a href="https://yohan.es/security/buffer-overflow/">buffer-overflow</a>
+</div>
+<p class="footer">
+Last update: <span class="date">late Wednesday evening, March 27th, 2019</span>
+</p>
+<p>
+Copyright © 2009-2018 Yohanes Nugroho
+</p>
+</div>
+</div>
+</div>
+<!--<script src="/bootstrap/js/jquery-1.8.0.min.js" type="text/javascript"></script>-->
+<!--<script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+
+
+</body></html>

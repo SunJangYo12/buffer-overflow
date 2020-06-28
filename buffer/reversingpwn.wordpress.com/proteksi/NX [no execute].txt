@@ -1,0 +1,2 @@
+untuk menggunakan proteksi ini gunakan "-z execstack"
+niscaya program lo terbebas dari buffer overflow :v
